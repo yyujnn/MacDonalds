@@ -19,13 +19,13 @@
 		F3D14DEB2BBAC46000A5F847 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D14DE92BBAC46000A5F847 /* LaunchScreen.storyboard */; };
 		F3D14DF52BBAD90B00A5F847 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D14DF42BBAD90B00A5F847 /* CategoryCollectionViewCell.xib */; };
 		F3D14DF72BBAD9C500A5F847 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D14DF62BBAD9C500A5F847 /* CategoryCollectionViewCell.swift */; };
-		F3D14DF92BBBA90900A5F847 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D14DF82BBBA90900A5F847 /* CartViewController.swift */; };
 		F3D14DFB2BBBA9C000A5F847 /* CartTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D14DFA2BBBA9C000A5F847 /* CartTableViewCell.xib */; };
 		F3D14DFD2BBBAB4F00A5F847 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D14DFC2BBBAB4F00A5F847 /* CartTableViewCell.swift */; };
 		F3D14E012BBBB0E400A5F847 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D14E002BBBB0E400A5F847 /* MenuViewController.storyboard */; };
 		F3D14E032BBBB11A00A5F847 /* CartViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D14E022BBBB11A00A5F847 /* CartViewController.storyboard */; };
 		F3D14E062BBBB66F00A5F847 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D14E042BBBB66F00A5F847 /* DetailViewController.swift */; };
 		F3D14E072BBBB66F00A5F847 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D14E052BBBB66F00A5F847 /* DetailViewController.xib */; };
+		F3D14E082BBBCD9500A5F847 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D14DF82BBBA90900A5F847 /* CartViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -192,6 +192,7 @@
 			files = (
 				F3D14DF72BBAD9C500A5F847 /* CategoryCollectionViewCell.swift in Sources */,
 				F3D14DE32BBAC45E00A5F847 /* MenuViewController.swift in Sources */,
+				F3D14E082BBBCD9500A5F847 /* CartViewController.swift in Sources */,
 				F3D14DDF2BBAC45E00A5F847 /* AppDelegate.swift in Sources */,
 				2AB9DC822BBBDBA5003B3FA3 /* Option.swift in Sources */,
 				2AB9DC7F2BBBDBA5003B3FA3 /* Calories.swift in Sources */,

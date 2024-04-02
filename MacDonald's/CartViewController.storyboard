@@ -61,6 +61,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Iab-4O-xF7"/>
+                    <connections>
+                        <outlet property="orderListTableView" destination="6Wh-Gg-Wj5" id="ZQo-xi-NaB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ufh-tt-XN4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
