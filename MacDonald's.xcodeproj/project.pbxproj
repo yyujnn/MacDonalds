@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AB9DC7F2BBBDBA5003B3FA3 /* Calories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DC7A2BBBDBA5003B3FA3 /* Calories.swift */; };
+		2AB9DC802BBBDBA5003B3FA3 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DC7B2BBBDBA5003B3FA3 /* Menu.swift */; };
+		2AB9DC812BBBDBA5003B3FA3 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DC7C2BBBDBA5003B3FA3 /* MenuItem.swift */; };
+		2AB9DC822BBBDBA5003B3FA3 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DC7D2BBBDBA5003B3FA3 /* Option.swift */; };
 		F3D14DDF2BBAC45E00A5F847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D14DDE2BBAC45E00A5F847 /* AppDelegate.swift */; };
 		F3D14DE12BBAC45E00A5F847 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D14DE02BBAC45E00A5F847 /* SceneDelegate.swift */; };
 		F3D14DE32BBAC45E00A5F847 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D14DE22BBAC45E00A5F847 /* MenuViewController.swift */; };
@@ -25,6 +29,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AB9DC7A2BBBDBA5003B3FA3 /* Calories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calories.swift; sourceTree = "<group>"; };
+		2AB9DC7B2BBBDBA5003B3FA3 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		2AB9DC7C2BBBDBA5003B3FA3 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		2AB9DC7D2BBBDBA5003B3FA3 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
 		F3D14DDB2BBAC45E00A5F847 /* MacDonald's.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacDonald's.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3D14DDE2BBAC45E00A5F847 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F3D14DE02BBAC45E00A5F847 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +63,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AB9DC7E2BBBDBA5003B3FA3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2AB9DC7A2BBBDBA5003B3FA3 /* Calories.swift */,
+				2AB9DC7B2BBBDBA5003B3FA3 /* Menu.swift */,
+				2AB9DC7C2BBBDBA5003B3FA3 /* MenuItem.swift */,
+				2AB9DC7D2BBBDBA5003B3FA3 /* Option.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		F3D14DD22BBAC45E00A5F847 = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +93,7 @@
 		F3D14DDD2BBAC45E00A5F847 /* MacDonald's */ = {
 			isa = PBXGroup;
 			children = (
+				2AB9DC7E2BBBDBA5003B3FA3 /* Model */,
 				F3D14DDE2BBAC45E00A5F847 /* AppDelegate.swift */,
 				F3D14DE02BBAC45E00A5F847 /* SceneDelegate.swift */,
 				F3D14DE22BBAC45E00A5F847 /* MenuViewController.swift */,
@@ -173,10 +193,14 @@
 				F3D14DF72BBAD9C500A5F847 /* CategoryCollectionViewCell.swift in Sources */,
 				F3D14DE32BBAC45E00A5F847 /* MenuViewController.swift in Sources */,
 				F3D14DDF2BBAC45E00A5F847 /* AppDelegate.swift in Sources */,
+				2AB9DC822BBBDBA5003B3FA3 /* Option.swift in Sources */,
+				2AB9DC7F2BBBDBA5003B3FA3 /* Calories.swift in Sources */,
 				F3D14DFD2BBBAB4F00A5F847 /* CartTableViewCell.swift in Sources */,
 				F3D14DF92BBBA90900A5F847 /* CartViewController.swift in Sources */,
+				2AB9DC802BBBDBA5003B3FA3 /* Menu.swift in Sources */,
 				F3D14DE12BBAC45E00A5F847 /* SceneDelegate.swift in Sources */,
 				F3D14E062BBBB66F00A5F847 /* DetailViewController.swift in Sources */,
+				2AB9DC812BBBDBA5003B3FA3 /* MenuItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
