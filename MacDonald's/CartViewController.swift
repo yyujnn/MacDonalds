@@ -8,8 +8,6 @@
 import Foundation
 import UIKit
 
-let CART_TABLE_VIEW_CELL_ID = "CartTableViewCell"
-
 class CartViewController: UIViewController {
     
     @IBOutlet weak var orderListTableView: UITableView!
@@ -26,7 +24,8 @@ class CartViewController: UIViewController {
         // 쎌 리소스 파일 가져오기
         let cartTableViewCellNib = UINib(nibName: String(describing: CartTableViewCell.self), bundle: nil)
         
-        self.orderListTableView.register(cartTableViewCellNib, forCellReuseIdentifier: CART_TABLE_VIEW_CELL_ID)
+        self.orderListTableView.register(cartTableViewCellNib, forCellReuseIdentifier: "CartTableViewCell")
+        
     }
 }
 extension CartViewController: UITableViewDataSource {
@@ -35,7 +34,7 @@ extension CartViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = orderListTableView.dequeueReusableCell(withIdentifier: CART_TABLE_VIEW_CELL_ID, for: indexPath) as! CartTableViewCell
+        guard let cell = orderListTableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as? CartTableViewCell else {  return UITableViewCell() }
         cell.orderMenuLabel.text = tempOrderArray[indexPath.row]
         return cell
     }
