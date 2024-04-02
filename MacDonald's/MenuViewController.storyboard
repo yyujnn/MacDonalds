@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VTN-Xz-56L">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MacDonald's-->
+        <scene sceneID="Nsf-xL-YMs">
+            <objects>
+                <viewController id="iAr-mI-03Z" customClass="MenuVC" customModule="MacDonald_s" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LO4-hO-EE6">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nMl-hc-tAw">
+                                <rect key="frame" x="0.0" y="103" width="393" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="I0h-9Z-ihL"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Fzw-Vo-P9f">
+                                    <size key="itemSize" width="100" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="20g-P4-NjS">
+                                <rect key="frame" x="50" y="773.66666666666663" width="293" height="34.333333333333371"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cUZ-TB-xMn">
+                                        <rect key="frame" x="0.0" y="0.0" width="184.33333333333334" height="34.333333333333336"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="장바구니"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 8,000원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MXX-1h-pS4">
+                                        <rect key="frame" x="214.33333333333331" y="0.0" width="78.666666666666686" height="34.333333333333336"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="WWj-Ui-8zU"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="20g-P4-NjS" firstAttribute="centerX" secondItem="LO4-hO-EE6" secondAttribute="centerX" id="6Dm-ub-EcD"/>
+                            <constraint firstItem="WWj-Ui-8zU" firstAttribute="trailing" secondItem="20g-P4-NjS" secondAttribute="trailing" constant="50" id="BAw-ED-v98"/>
+                            <constraint firstItem="nMl-hc-tAw" firstAttribute="leading" secondItem="WWj-Ui-8zU" secondAttribute="leading" id="Cox-Ub-oz5"/>
+                            <constraint firstItem="20g-P4-NjS" firstAttribute="leading" secondItem="WWj-Ui-8zU" secondAttribute="leading" constant="50" id="K1v-H8-n8w"/>
+                            <constraint firstItem="WWj-Ui-8zU" firstAttribute="trailing" secondItem="nMl-hc-tAw" secondAttribute="trailing" id="QcZ-WA-1nI"/>
+                            <constraint firstItem="WWj-Ui-8zU" firstAttribute="bottom" secondItem="20g-P4-NjS" secondAttribute="bottom" constant="10" id="QsP-rI-DX8"/>
+                            <constraint firstItem="nMl-hc-tAw" firstAttribute="top" secondItem="WWj-Ui-8zU" secondAttribute="top" id="pad-0G-tFT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="MacDonald's" id="IUS-q1-jrs">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="cart.fill" catalog="system" style="plain" id="fti-4h-Gag">
+                            <color key="tintColor" systemColor="labelColor"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="categoryCollectionView" destination="nMl-hc-tAw" id="1NE-LK-FPc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yrg-PX-yge" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2814.5038167938928" y="-35.211267605633807"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dxz-pA-7fu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VTN-Xz-56L" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dig-5m-Ukd">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="iAr-mI-03Z" kind="relationship" relationship="rootViewController" id="o9K-PQ-hM0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wad-cq-ifE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887.7862595419847" y="-35.211267605633807"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
