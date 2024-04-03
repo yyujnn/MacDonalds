@@ -25,13 +25,13 @@
                                 </buttonConfiguration>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4t6-Ok-fcP">
-                                <rect key="frame" x="15" y="109" width="363" height="300"/>
+                                <rect key="frame" x="100" y="109" width="193" height="193"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="hBq-Sb-3WL"/>
+                                    <constraint firstAttribute="width" secondItem="4t6-Ok-fcP" secondAttribute="height" multiplier="1:1" id="GPM-an-wR3"/>
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="AEh-b6-5kQ">
-                                <rect key="frame" x="15" y="424" width="363" height="300"/>
+                                <rect key="frame" x="15" y="423.66666666666674" width="363" height="300"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="AvD-ov-dWu"/>
@@ -95,20 +95,20 @@
                                 </prototypes>
                             </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="48n-eK-Cdg">
-                                <rect key="frame" x="15" y="774" width="363" height="34"/>
+                                <rect key="frame" x="15" y="773.66666666666663" width="363" height="34.333333333333371"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9d5-AQ-r6h" userLabel="담기 Button">
-                                        <rect key="frame" x="0.0" y="0.0" width="150.33333333333334" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="150.33333333333334" height="34.333333333333336"/>
                                         <color key="backgroundColor" red="0.91976243260000001" green="0.46688904069999998" blue="0.71529763629999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="tintColor" systemColor="systemBackgroundColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="담기"/>
                                         <connections>
-                                            <action selector="addToCart:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="drA-o8-QSx"/>
+                                            <action selector="addToCartButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ymJ-Mr-IsT"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 금액: ₩" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="InT-hh-1PY" userLabel="총 금액 Label">
-                                        <rect key="frame" x="160.33333333333337" y="0.0" width="202.66666666666663" height="34"/>
+                                        <rect key="frame" x="160.33333333333337" y="0.0" width="202.66666666666663" height="34.333333333333336"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" systemColor="systemBackgroundColor"/>
@@ -126,37 +126,47 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설명" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-RT-be9" userLabel="Food Description">
+                                <rect key="frame" x="30" y="312" width="333" height="91.666666666666686"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4t6-Ok-fcP" secondAttribute="trailing" constant="15" id="4eh-hz-cra"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="4t6-Ok-fcP" secondAttribute="trailing" constant="100" id="4eh-hz-cra"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="AEh-b6-5kQ" secondAttribute="trailing" constant="15" id="50f-cW-mPb"/>
                             <constraint firstItem="AEh-b6-5kQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="8nN-IN-qi3"/>
+                            <constraint firstItem="3kZ-RT-be9" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-30" id="DT0-85-MhW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="48n-eK-Cdg" secondAttribute="bottom" constant="10" id="EIN-aG-fYK"/>
+                            <constraint firstItem="AEh-b6-5kQ" firstAttribute="top" secondItem="3kZ-RT-be9" secondAttribute="bottom" constant="20" id="FUL-3E-sdP"/>
                             <constraint firstItem="sIh-Ld-7PJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Prq-Kr-zTR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dWI-4b-q3Q" secondAttribute="trailing" constant="10" id="W0F-UU-LkM"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="dWI-4b-q3Q" secondAttribute="top" constant="7" id="X3s-ZX-yqA"/>
+                            <constraint firstItem="3kZ-RT-be9" firstAttribute="top" secondItem="4t6-Ok-fcP" secondAttribute="bottom" constant="10" id="ZOI-1o-MLK"/>
                             <constraint firstItem="sIh-Ld-7PJ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="fFF-wp-zGB"/>
                             <constraint firstItem="48n-eK-Cdg" firstAttribute="top" secondItem="AEh-b6-5kQ" secondAttribute="bottom" constant="50" id="gJR-LI-Jwb"/>
-                            <constraint firstItem="4t6-Ok-fcP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="odb-ta-SjV"/>
+                            <constraint firstItem="4t6-Ok-fcP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="odb-ta-SjV"/>
+                            <constraint firstItem="3kZ-RT-be9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="uNT-pI-gQD"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="48n-eK-Cdg" secondAttribute="trailing" constant="15" id="vSX-pu-eJ2"/>
-                            <constraint firstItem="AEh-b6-5kQ" firstAttribute="top" secondItem="4t6-Ok-fcP" secondAttribute="bottom" constant="15" id="vzS-5A-rRG"/>
                             <constraint firstItem="48n-eK-Cdg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="15" id="yhf-0v-tDL"/>
                             <constraint firstItem="4t6-Ok-fcP" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="ynb-E4-8qT"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="addToCart" destination="9d5-AQ-r6h" id="CIH-9E-ose"/>
+                        <outlet property="addToCartButton" destination="9d5-AQ-r6h" id="aRT-Ka-AJh"/>
+                        <outlet property="descriptionLabel" destination="3kZ-RT-be9" id="XeY-CD-V1P"/>
                         <outlet property="detailTableView" destination="AEh-b6-5kQ" id="gJq-ez-Ba9"/>
-                        <outlet property="goToCart" destination="dWI-4b-q3Q" id="FKb-rg-cDa"/>
+                        <outlet property="goToCartButton" destination="dWI-4b-q3Q" id="z7D-wt-Fkq"/>
                         <outlet property="menuImageView" destination="4t6-Ok-fcP" id="VKc-I7-Dua"/>
                         <outlet property="totalAmountLabel" destination="InT-hh-1PY" id="wbI-Et-p8q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-244" y="-176"/>
+            <point key="canvasLocation" x="-245.03816793893128" y="-176.05633802816902"/>
         </scene>
     </scenes>
     <resources>
