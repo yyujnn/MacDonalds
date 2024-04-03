@@ -65,7 +65,38 @@ class CartViewController: UIViewController {
         alert.addAction(delete)
         alert.addAction(cancel)
         self.present(alert, animated: true, completion: nil)
+    }
+    // MARK: - 결제하기 버튼
+    @IBAction func tapPaymentButton(_ sender: UIButton) {
+        let alert = UIAlertController(title: nil, message: "결제하시겠습니까?", preferredStyle: .alert)
         
+        // 확인 액션
+        let confirmAction = UIAlertAction(title: "확인", style: .default) { (_) in
+            // 주문을 결제하고 장바구니 비우기
+            self.orderArray.removeAll()
+            
+            // 테이블 뷰 리로드
+            self.orderListTableView.reloadData()
+            
+            // 총 가격 업데이트
+            self.updateTotal()
+            
+            // 결제 완료 알림창 표시
+            let paymentCompletedAlert = UIAlertController(title: "결제 완료", message: "주문이 성공적으로 결제되었습니다.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            paymentCompletedAlert.addAction(okAction)
+            self.present(paymentCompletedAlert, animated: true, completion: nil)
+        }
+        
+        // 취소 액션
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        
+        // 알림창에 액션 추가
+        alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
+        
+        // 알림창 표시
+        self.present(alert, animated: true, completion: nil)
     }
     
     // MARK: - 총 가격 설정 메서드
