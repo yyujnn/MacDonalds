@@ -8,41 +8,9 @@
 import Foundation
 import UIKit
 
-// MARK: - 가상 데이터 모델
-struct Menu2 {
-    var name: String
-    var description: String?
-    var price: Int
-    var image: String
-    var calories: Float
-    var foodType: FoodType
-}
-
-enum FoodType {
-    case burger
-    case side
-    case salad
-    case drink
-}
-
-// 치즈 버거
-let cheezeBurger: Menu2 = Menu2(
-    name: "치즈버거",
-    price: 12000,
-    image: "avocadoChickenSalad",
-    calories: 10,
-    foodType: .salad)
-
-let chickenSalad: Menu2 = Menu2(
-    name: "치킨샐러드",
-    price: 5000,
-    image: "avocadoChickenSalad",
-    calories: 10,
-    foodType: .salad)
-
 // 주문 메뉴 모델
 struct OrderMenu {
-    var menu: Menu2
+    var menu: MenuItem
     var quantity: Int
 }
 
@@ -56,8 +24,9 @@ class CartViewController: UIViewController {
     
     // 임시 주문 배열 넘어왔다고 가정
     var orderArray:[OrderMenu] = [
-        OrderMenu(menu: cheezeBurger, quantity: 2),
-        OrderMenu(menu: chickenSalad, quantity: 3)
+        OrderMenu(menu: baconCheese, quantity: 2),
+        OrderMenu(menu: cheese, quantity: 3),
+        OrderMenu(menu: doubleBacon, quantity: 5)
     ]
     
     override func viewDidLoad() {
