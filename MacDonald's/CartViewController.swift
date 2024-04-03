@@ -50,6 +50,7 @@ struct OrderMenu {
 class CartViewController: UIViewController {
     
     @IBOutlet weak var orderListTableView: UITableView!
+    @IBOutlet weak var paymentButton: UIButton!
     
     // 임시 주문 배열 넘어왔다고 가정
     var orderArray:[OrderMenu] = [
@@ -67,6 +68,8 @@ class CartViewController: UIViewController {
         let cartTableViewCellNib = UINib(nibName: String(describing: CartTableViewCell.self), bundle: nil)
         
         self.orderListTableView.register(cartTableViewCellNib, forCellReuseIdentifier: "CartTableViewCell")
+        
+        self.paymentButton.layer.cornerRadius = 20
         
     }
 }
