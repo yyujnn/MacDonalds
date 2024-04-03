@@ -17,4 +17,13 @@ struct DataStorage {
     ]
     // 장바구니에 담은 menu목록을 담고 있는 배열
     static var cartList: [Menu] = []
+    
+    // 단일 메뉴 테스트용 변수
+    static var testMenu: Menu = MenuItem(
+        name: "치즈 버거",
+        description: "Fresh British beef topped with cheese, pickles, onions, tomatoes, crisp lettuce, Heinz ketchup, and Heinz mayo. It's big flavour at a savoury price.",
+        price: 3400,
+        image: "cheeze",
+        type: .burger
+    )
 }
