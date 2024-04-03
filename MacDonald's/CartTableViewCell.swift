@@ -15,12 +15,28 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var orderCountLabel: UILabel!
     @IBOutlet weak var countStepper: UIStepper!
     
+    var updateQuantityHandler: ((Int) -> Void)?
+    var index: Int = 0
+    
     override func awakeFromNib() {
-        print("CartTableViewCell - awakeFromNib() called")
+        //        print("CartTableViewCell - awakeFromNib() called")
         super.awakeFromNib()
+        self.selectionStyle = .none
         
+        countStepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
+        countStepper.minimumValue = 1
     }
-    @IBAction func stepperPressed(_ sender: UIStepper) {
-        self.orderCountLabel.text = Int(sender.value).description
+    
+    @objc func stepperValueChanged() {
+        // 스텝퍼의 값이 변경되면 호출되는 메소드
+        // 라벨의 텍스트를 스텝퍼의 값으로 업데이트
+        let value = Int(countStepper.value)
+        updateQuantityHandler?(value)
     }
+    
+    func updatePriceLabel(newPrice: Int, quantity: Int) {
+        orderPriceLabel.text = "₩" + String(newPrice)
+        orderCountLabel.text = "\(quantity)"
+    }
+    
 }
