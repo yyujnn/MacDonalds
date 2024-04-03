@@ -45,6 +45,11 @@ class CartViewController: UIViewController {
         self.updateTotal()
     }
     
+    // MARK: - 전체 삭제 버튼
+    @IBAction func tapDeleteButton(_ sender: UIButton) {
+        
+    }
+    
     // MARK: - 총 가격 설정 메서드
     func updateTotal() {
         var totalCount = 0
@@ -58,7 +63,6 @@ class CartViewController: UIViewController {
         orderTotalCount.text = "\(totalCount)"
         orderTotalPrice.text = "₩\(totalPrice)"
     }
-
 }
 
 // MARK: - DataSource
@@ -99,11 +103,25 @@ extension CartViewController: UITableViewDataSource {
     
 }
 extension CartViewController: UITableViewDelegate {
+    // MARK: - cell 삭제
+    // 셀 편집 여부를 설정
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
+    // 사용자가 셀을 삭제할 때 호출됩니다.
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // 삭제하려는 셀의 인덱스
+            let index = indexPath.row
+            
+            // 데이터 소스에서 셀 삭제
+            orderArray.remove(at: index)
+            
+            // 테이블 뷰에서 셀 삭제
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            updateTotal()
+        }
+    }
 }
-
-/*
-#Preview {
-    CartViewController()
-}
-*/
