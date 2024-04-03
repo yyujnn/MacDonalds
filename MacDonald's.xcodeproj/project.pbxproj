@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A651D8A2BBCE149001D72B6 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A651D892BBCE149001D72B6 /* LaunchView.swift */; };
 		2AB9DC7F2BBBDBA5003B3FA3 /* Calories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DC7A2BBBDBA5003B3FA3 /* Calories.swift */; };
 		2AB9DC802BBBDBA5003B3FA3 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DC7B2BBBDBA5003B3FA3 /* Menu.swift */; };
 		2AB9DC812BBBDBA5003B3FA3 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DC7C2BBBDBA5003B3FA3 /* MenuItem.swift */; };
@@ -25,13 +26,11 @@
 		F3D14DFD2BBBAB4F00A5F847 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D14DFC2BBBAB4F00A5F847 /* CartTableViewCell.swift */; };
 		F3D14E012BBBB0E400A5F847 /* MenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D14E002BBBB0E400A5F847 /* MenuViewController.storyboard */; };
 		F3D14E032BBBB11A00A5F847 /* CartViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3D14E022BBBB11A00A5F847 /* CartViewController.storyboard */; };
-		F3D14E062BBBB66F00A5F847 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D14E042BBBB66F00A5F847 /* DetailViewController.swift */; };
-		F3D14E072BBBB66F00A5F847 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3D14E052BBBB66F00A5F847 /* DetailViewController.xib */; };
 		F3D14E082BBBCD9500A5F847 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D14DF82BBBA90900A5F847 /* CartViewController.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2A651D892BBCE149001D72B6 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
 		2AB9DC7A2BBBDBA5003B3FA3 /* Calories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calories.swift; sourceTree = "<group>"; };
 		2AB9DC7B2BBBDBA5003B3FA3 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		2AB9DC7C2BBBDBA5003B3FA3 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
@@ -99,6 +98,7 @@
 				2AB9DC7E2BBBDBA5003B3FA3 /* Model */,
 				F3D14DDE2BBAC45E00A5F847 /* AppDelegate.swift */,
 				F3D14DE02BBAC45E00A5F847 /* SceneDelegate.swift */,
+				2A651D892BBCE149001D72B6 /* LaunchView.swift */,
 				F3D14DE22BBAC45E00A5F847 /* MenuViewController.swift */,
 				F3D14E002BBBB0E400A5F847 /* MenuViewController.storyboard */,
 				685441B82BBBEF2C00696445 /* DetailViewController.storyboard */,
@@ -194,6 +194,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F3D14DF72BBAD9C500A5F847 /* CategoryCollectionViewCell.swift in Sources */,
+				2A651D8A2BBCE149001D72B6 /* LaunchView.swift in Sources */,
 				F3D14DE32BBAC45E00A5F847 /* MenuViewController.swift in Sources */,
 				F3D14E082BBBCD9500A5F847 /* CartViewController.swift in Sources */,
 				F3D14DDF2BBAC45E00A5F847 /* AppDelegate.swift in Sources */,
@@ -201,7 +202,6 @@
 				2AB9DC822BBBDBA5003B3FA3 /* Option.swift in Sources */,
 				2AB9DC7F2BBBDBA5003B3FA3 /* Calories.swift in Sources */,
 				F3D14DFD2BBBAB4F00A5F847 /* CartTableViewCell.swift in Sources */,
-				F3D14DF92BBBA90900A5F847 /* CartViewController.swift in Sources */,
 				2AB9DC802BBBDBA5003B3FA3 /* Menu.swift in Sources */,
 				F3D14DE12BBAC45E00A5F847 /* SceneDelegate.swift in Sources */,
 				2AB9DC812BBBDBA5003B3FA3 /* MenuItem.swift in Sources */,
@@ -282,7 +282,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -339,7 +339,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -361,8 +361,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -370,9 +371,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.test.MacDonald-s";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -388,8 +393,9 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -397,9 +403,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.test.MacDonald-s";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -9,69 +9,29 @@ import Foundation
 
 protocol Menu {
     
-    var name: String { get set }
-    var description: String { get set }
-    var price: String { get set }
-    var image: String { get set }
+    var id: UUID { get }
+    var name: String { get }
+    var description: String? { get }
+    var price: Int { get }
+    var image: String { get }
+    var calories: Int? { get }
     
 }
 
-
-struct Combo: Menu {
+enum FoodType {
     
-    var name: String
-    var description: String
-    var price: String
-    var image: String
-    var burger: String
-    var sideMenu: String
-    var drink: String
+    case burger, side, salad, drink
     
 }
 
-
-struct Burger: Calories {
+struct MenuItem: Menu {
     
+    var id: UUID = UUID()
     var name: String
-    var description: String
-    var calories: String
-    var price: String
+    var description: String?
+    var price: Int
     var image: String
-    var cheeseOption: CheeseOption = .none
-    var onionOption: OnionOption = .none
-    var pattyOption: PattyOption = .none
-    
-}
-
-
-struct SideMenu: Calories {
-    
-    var name: String
-    var description: String
-    var calories: String
-    var price: String
-    var image: String
-    
-}
-
-
-struct SaladMenu: Calories {
-    
-    var name: String
-    var description: String
-    var calories: String
-    var price: String
-    var image: String
-    
-}
-
-
-struct Drink: Menu {
-    
-    var name: String
-    var description: String
-    var price: String
-    var image: String
-    var drinkOption: DrinkOption = .coke
+    var calories: Int?
+    var type: FoodType
     
 }
