@@ -45,6 +45,60 @@ class CartViewController: UIViewController {
         self.updateTotal()
     }
     
+    // MARK: - 전체 삭제 버튼
+    @IBAction func tapDeleteButton(_ sender: UIButton) {
+        let alert = UIAlertController(title: nil, message: "장바구니를 비우시겠습니까?", preferredStyle: .alert)
+        // 확인 액션(삭제)
+        let delete = UIAlertAction(title: "확인", style: .default) { (_) in
+            // 주문 배열 비우기
+            self.orderArray.removeAll()
+            
+            // 테이블 뷰 리로드
+            self.orderListTableView.reloadData()
+            
+            // 총 가격 업데이트
+            self.updateTotal()
+            print(self.orderArray)
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
+    }
+    // MARK: - 결제하기 버튼
+    @IBAction func tapPaymentButton(_ sender: UIButton) {
+        let alert = UIAlertController(title: nil, message: "결제하시겠습니까?", preferredStyle: .alert)
+        
+        // 확인 액션
+        let confirmAction = UIAlertAction(title: "확인", style: .default) { (_) in
+            // 주문을 결제하고 장바구니 비우기
+            self.orderArray.removeAll()
+            
+            // 테이블 뷰 리로드
+            self.orderListTableView.reloadData()
+            
+            // 총 가격 업데이트
+            self.updateTotal()
+            
+            // 결제 완료 알림창 표시
+            let paymentCompletedAlert = UIAlertController(title: "결제 완료", message: "주문이 성공적으로 결제되었습니다.", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            paymentCompletedAlert.addAction(okAction)
+            self.present(paymentCompletedAlert, animated: true, completion: nil)
+        }
+        
+        // 취소 액션
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel)
+        
+        // 알림창에 액션 추가
+        alert.addAction(cancelAction)
+        alert.addAction(confirmAction)
+        
+        // 알림창 표시
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     // MARK: - 총 가격 설정 메서드
     func updateTotal() {
         var totalCount = 0
@@ -58,7 +112,6 @@ class CartViewController: UIViewController {
         orderTotalCount.text = "\(totalCount)"
         orderTotalPrice.text = "₩\(totalPrice)"
     }
-
 }
 
 // MARK: - DataSource
@@ -99,11 +152,25 @@ extension CartViewController: UITableViewDataSource {
     
 }
 extension CartViewController: UITableViewDelegate {
+    // MARK: - cell 삭제
+    // 셀 편집 여부를 설정
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
     
+    // 사용자가 셀을 삭제할 때 호출됩니다.
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // 삭제하려는 셀의 인덱스
+            let index = indexPath.row
+            
+            // 데이터 소스에서 셀 삭제
+            orderArray.remove(at: index)
+            
+            // 테이블 뷰에서 셀 삭제
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            
+            updateTotal()
+        }
+    }
 }
-
-/*
-#Preview {
-    CartViewController()
-}
-*/
