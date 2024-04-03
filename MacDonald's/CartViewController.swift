@@ -47,6 +47,24 @@ class CartViewController: UIViewController {
     
     // MARK: - 전체 삭제 버튼
     @IBAction func tapDeleteButton(_ sender: UIButton) {
+        let alert = UIAlertController(title: nil, message: "장바구니를 비우시겠습니까?", preferredStyle: .alert)
+        // 확인 액션(삭제)
+        let delete = UIAlertAction(title: "확인", style: .default) { (_) in
+            // 주문 배열 비우기
+            self.orderArray.removeAll()
+            
+            // 테이블 뷰 리로드
+            self.orderListTableView.reloadData()
+            
+            // 총 가격 업데이트
+            self.updateTotal()
+            print(self.orderArray)
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        alert.addAction(delete)
+        alert.addAction(cancel)
+        self.present(alert, animated: true, completion: nil)
         
     }
     
