@@ -24,9 +24,9 @@ class CartViewController: UIViewController {
     
     // 임시 주문 배열 넘어왔다고 가정
     var orderArray:[OrderMenu] = [
-        OrderMenu(menu: baconCheese, quantity: 2),
-        OrderMenu(menu: cheese, quantity: 3),
-        OrderMenu(menu: doubleBacon, quantity: 5)
+        OrderMenu(menu: baconCheeseBurger, quantity: 2),
+        OrderMenu(menu: cheeseBurger, quantity: 3),
+        OrderMenu(menu: doubleBaconBurger, quantity: 5)
     ]
     
     override func viewDidLoad() {
@@ -123,7 +123,7 @@ extension CartViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = orderListTableView.dequeueReusableCell(withIdentifier: "CartTableViewCell", for: indexPath) as? CartTableViewCell else {  return UITableViewCell() }
         let order = orderArray[indexPath.row]
-        let price = order.menu.price*order.quantity
+        let price = order.menu.price
         
         cell.orderMenuLabel.text = order.menu.name
         cell.orderCountLabel.text = "\(order.quantity)"

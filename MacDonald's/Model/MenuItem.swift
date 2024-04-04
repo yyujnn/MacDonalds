@@ -9,17 +9,17 @@ import Foundation
 
 
 // 햄버거 메뉴
-let baconCheese = MenuItem(name: "베이컨 치즈 버거", description: "신선한 영국산 소고기, 애플우드 훈제 베이컨, 아메리칸 치즈, 아삭한 양상추, 토마토, 하인즈 마요네즈까지. 베이컨 애호가라면 누구나 좋아하는 메뉴입니다.", price: 3700, image: "baconCheese", calories: 406, type: .burger)
+let baconCheeseBurger = MenuItem(name: "베이컨 치즈 버거", description: "신선한 영국산 소고기, 애플우드 훈제 베이컨, 아메리칸 치즈, 아삭한 양상추, 토마토, 하인즈 마요네즈까지. 베이컨 애호가라면 누구나 좋아하는 메뉴입니다.", price: 3700, image: "baconCheese", calories: 406, type: .burger)
 
-let cheese = MenuItem(name: "치즈 버거", description: "신선한 영국산 소고기에 치즈, 피클, 양파, 토마토, 아삭한 양상추, 하인즈 케첩과 마요네즈를 넣은 버거. 풍성한 맛을 합리적인 가격에 만나보세요.", price: 2800, image: "cheese", calories: 375, type: .burger)
+let cheeseBurger = MenuItem(name: "치즈 버거", description: "신선한 영국산 소고기에 치즈, 피클, 양파, 토마토, 아삭한 양상추, 하인즈 케첩과 마요네즈를 넣은 버거. 풍성한 맛을 합리적인 가격에 만나보세요.", price: 2800, image: "cheese", calories: 375, type: .burger)
 
-let doubleBacon = MenuItem(name: "더블 베이컨 버거", description: "신선한 영국산 소고기 0.2kg, 미국산 치즈, 바삭한 애플우드 훈제 베이컨 6조각, 하인즈 케첩과 마요네즈. 육식주의자라면 이 메뉴가 딱입니다!", price: 6200, image: "doubleBacon", calories: 1010, type: .burger)
+let doubleBaconBurger = MenuItem(name: "더블 베이컨 버거", description: "신선한 영국산 소고기 0.2kg, 미국산 치즈, 바삭한 애플우드 훈제 베이컨 6조각, 하인즈 케첩과 마요네즈. 육식주의자라면 이 메뉴가 딱입니다!", price: 6200, image: "doubleBacon", calories: 1010, type: .burger)
 
-let triple = MenuItem(name: "트리플 버거", description: "신선한 영국산 소고기 113g, 미국산 치즈, 아삭한 양상추, 토마토, 피클, 하인즈 케첩과 마요네즈, 그리고 양파까지. 다양한 재료들을 구운 번과 함께 드세요. 양손을 모두 사용하세요!", price: 5400, image: "triple", calories: 1204, type: .burger)
+let tripleBurger = MenuItem(name: "트리플 버거", description: "신선한 영국산 소고기 113g, 미국산 치즈, 아삭한 양상추, 토마토, 피클, 하인즈 케첩과 마요네즈, 그리고 양파까지. 다양한 재료들을 구운 번과 함께 드세요. 양손을 모두 사용하세요!", price: 5400, image: "triple", calories: 1204, type: .burger)
 
-let double = MenuItem(name: "더블 버거", description: "신선한 영국산 소고기 0.2kg, 아메리칸 치즈, 아삭한 양상추, 토마토, 피클, 하인즈 케첩과 마요네즈, 그리고 양파까지. 이 모든 다양한 재료들을 구운 번과 함께 드세요. 고기는 듬뿍, 고기는 사랑이니까요.", price: 4800, image: "double", calories: 888, type: .burger)
+let doubleBurger = MenuItem(name: "더블 버거", description: "신선한 영국산 소고기 0.2kg, 아메리칸 치즈, 아삭한 양상추, 토마토, 피클, 하인즈 케첩과 마요네즈, 그리고 양파까지. 이 모든 다양한 재료들을 구운 번과 함께 드세요. 고기는 듬뿍, 고기는 사랑이니까요.", price: 4800, image: "double", calories: 888, type: .burger)
 
-let single = MenuItem(name: "싱글 버거", description: "신선한 영국산 소고기 113g, 미국산 치즈, 아삭한 양상추, 토마토, 피클, 하인즈 케첩과 마요네즈, 양파를 데이브의 방식대로 구운 번과 함께 드세요.", price: 3900, image: "single", calories: 524, type: .burger)
+let singleBurger = MenuItem(name: "싱글 버거", description: "신선한 영국산 소고기 113g, 미국산 치즈, 아삭한 양상추, 토마토, 피클, 하인즈 케첩과 마요네즈, 양파를 데이브의 방식대로 구운 번과 함께 드세요.", price: 3900, image: "single", calories: 524, type: .burger)
 
 
 // 사이드 메뉴

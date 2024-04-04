@@ -13,7 +13,7 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     var tableView = UITableView()
     
-    var burgerItems: [MenuItem] = [baconCheese, cheese, doubleBacon, triple, doublee, singlee]
+    var burgerItems: [MenuItem] = [baconCheeseBurger, cheeseBurger, doubleBaconBurger, tripleBurger, doubleBurger, singleBurger]
     var sideItems: [MenuItem] = [cheesepotato, chiliCheesePotato, chiliCheeseFries, friesSmall, friesMedium, friesLarge]
     var drinkItems: [MenuItem] = [coke, cokeZero, sprite]
     var saladItems: [MenuItem] = [avocadoChickenSalad, caesarChikenSalad]
