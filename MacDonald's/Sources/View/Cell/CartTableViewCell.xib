@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CartTableViewCell" rowHeight="97" id="hBq-tp-HJj" customClass="CartTableViewCell" customModule="MacDonald_s" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="461" height="97"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hBq-tp-HJj" id="7RV-OF-QNm">
+                <rect key="frame" x="0.0" y="0.0" width="461" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JSy-1M-JUa">
+                        <rect key="frame" x="20" y="10" width="111" height="77"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="불고기 버거 세트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DQU-Vn-DX4">
+                                <rect key="frame" x="0.0" y="0.0" width="111" height="33.666666666666664"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="₩ 5,300" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HLj-az-LRc">
+                                <rect key="frame" x="0.0" y="43.666666666666657" width="60.666666666666664" height="33.333333333333343"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" systemColor="systemOrangeColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Pqh-9P-HST">
+                        <rect key="frame" x="319.33333333333331" y="10" width="121.66666666666669" height="77"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uny-JL-EfM">
+                                <rect key="frame" x="0.0" y="29.666666666666664" width="7.666666666666667" height="18"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="rp5-0N-ngc">
+                                <rect key="frame" x="27.666666666666686" y="22.666666666666664" width="94" height="32"/>
+                            </stepper>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="JSy-1M-JUa" firstAttribute="leading" secondItem="7RV-OF-QNm" secondAttribute="leading" constant="20" id="3aN-QE-9bP"/>
+                    <constraint firstAttribute="bottom" secondItem="JSy-1M-JUa" secondAttribute="bottom" constant="10" id="5U7-pc-xyR"/>
+                    <constraint firstAttribute="trailing" secondItem="Pqh-9P-HST" secondAttribute="trailing" constant="20" id="JDO-XT-Vvt"/>
+                    <constraint firstItem="Pqh-9P-HST" firstAttribute="top" secondItem="7RV-OF-QNm" secondAttribute="top" constant="10" id="MAB-Zg-Nnz"/>
+                    <constraint firstItem="JSy-1M-JUa" firstAttribute="top" secondItem="7RV-OF-QNm" secondAttribute="top" constant="10" id="X1X-nf-zfF"/>
+                    <constraint firstAttribute="bottom" secondItem="Pqh-9P-HST" secondAttribute="bottom" constant="10" id="cnu-Kx-6VH"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="countStepper" destination="rp5-0N-ngc" id="wDg-oU-EKN"/>
+                <outlet property="orderCountLabel" destination="uny-JL-EfM" id="0D7-c4-7mz"/>
+                <outlet property="orderMenuLabel" destination="DQU-Vn-DX4" id="P6U-Qi-9SP"/>
+                <outlet property="orderPriceLabel" destination="HLj-az-LRc" id="kqT-Hf-kZk"/>
+            </connections>
+            <point key="canvasLocation" x="-199.23664122137404" y="-45.422535211267608"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

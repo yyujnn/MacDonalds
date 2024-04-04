@@ -29,13 +29,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
         // 내가 원하는 Storybaord를 시작점으로 설정
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             // MARK: ⚠️ 함수 인자(to:)만 수정하세요! ⚠️
             // 만약 잘 안된다면 두가지 확인하기
             // 1. 오타는 없는지
             // 2. 스토리보드 내의 entry point가 있는지 (뷰컨 앞에 있는 화살표)
             // 3. 2번이 안되어있으면 속성에서 "is Initial View Controller" 체크하기.
-            self.move(to: "MenuVC")
+            self.move(to: "Menu")
         }
     }
     
