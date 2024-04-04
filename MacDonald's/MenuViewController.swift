@@ -113,11 +113,36 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
             default:
                 fatalError("Unexpected Segment")
         }
-        
         cell.setMenuItem(menuItem: menuItem)
         cell.backgroundColor = .clear
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let menuItem: MenuItem
+        switch segmentedControl.selectedSegmentIndex {
+            case 0:
+                menuItem = burgerItems[indexPath.row]
+            case 1:
+                menuItem = sideItems[indexPath.row]
+            case 2:
+                menuItem = saladItems[indexPath.row]
+            case 3:
+                menuItem = drinkItems[indexPath.row]
+            default:
+                fatalError("Invalid segment index.")
+        }
+        
+        // DetailViewController로 보내기!!
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil) // "YourStoryboardName"을 해당 스토리보드의 이름으로 교체하세요.
+        if let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
+            detailViewController.menu = menuItem
+            
+            // 네비게이션 컨트롤러로 전환시키는 코드
+            navigationController?.pushViewController(detailViewController, animated: true)
+        }
     }
 }
 
