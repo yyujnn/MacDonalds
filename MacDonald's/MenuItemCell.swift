@@ -30,7 +30,7 @@ class MenuItemCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("Error: ")
     }
-
+    
     // 셀 이미지 설정
     func configureImageView() {
         menuItemImageView.clipsToBounds = true
@@ -83,12 +83,7 @@ class MenuItemCell: UITableViewCell {
     // 메뉴생성 및 가격표시 형식
     func setMenuItem(menuItem: MenuItem) {
         nameLabel.text = menuItem.name
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        let priceString = formatter.string(from: NSNumber(value: menuItem.price)) ?? ""
-        priceLabel.text = "\(priceString)원"
-        
+        priceLabel.text = "\(menuItem.price.formattedWithSeparator)원"
         menuItemImageView.image = UIImage(named: menuItem.image)
     }
 }

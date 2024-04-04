@@ -15,15 +15,15 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var descriptionLabel: UILabel!
     
     // MenuVC로부터 받아올 Menu 정보
-    // var menu: Menu?
-    var menu:Menu? = DataStorage.testMenu
+    var menu: Menu?
     
     // 메인메뉴 주문 갯수
     var count: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // 장바구니 추가 이벤트 알림!
+        NotificationCenter.default.post(name: NSNotification.Name("orderAdded"), object: nil)
         tableViewConfigure()
         viewConfigure()
     }
@@ -59,19 +59,31 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     // 담기 버튼 alert 추가
     @IBAction func addToCartButtonClicked(_ sender: Any) {
+        
         let alert = UIAlertController(title: "장바구니 담기", message: "해당 상품을 추가하시겠습니까?", preferredStyle: .alert)
         
-        // 추가 버튼
-        let addButton = UIAlertAction(title: "추가", style: .default, handler: { _ in
-            guard let menu = self.menu else { return }
-            DataStorage.cartList.append(menu)
-            self.detailTableView.reloadData()
-        })
-        // 취소 버튼
+        let addButton = UIAlertAction(title: "추가", style: .default) { [weak self] _ in
+            guard let self = self, let menu = self.menu as? MenuItem else { return }
+            
+            let newOrder = OrderMenu(menu: menu, quantity: self.count)
+            DataStorage.shared.orderArray.append(newOrder)
+            NotificationCenter.default.post(name: NSNotification.Name("orderAdded"), object: nil)
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        
         let cancelButton = UIAlertAction(title: "취소", style: .default, handler: nil)
         alert.addAction(addButton)
         alert.addAction(cancelButton)
         self.present(alert, animated: true, completion: nil)
+    }
+    @IBAction func cartButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "CartViewController", bundle: nil)
+        
+        if let cartViewController = storyboard.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController {
+            cartViewController.modalPresentationStyle = .pageSheet
+            present(cartViewController, animated: true, completion: nil)
+        }
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -82,10 +94,10 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "detailCell", for: indexPath) as? ListCell else { return UITableViewCell() }
         guard let menu = menu else { return UITableViewCell() }
         cell.menuNameLabel.text = menu.name
-        cell.menuPriceLabel.text = "₩\(menu.price)"
+        cell.menuPriceLabel.text = "₩\(menu.price.formattedWithSeparator)"
         cell.countLabel.text = "\(count)"
         let totalAmount = (menu.price) * count
-        totalAmountLabel.text = "총 금액: \(totalAmount)원"
+        totalAmountLabel.text = "총 금액: \(totalAmount.formattedWithSeparator)원"
         
         cell.countStepper.tag = indexPath.row
         cell.countStepper.addTarget(self, action: #selector(stepperClicked), for: .valueChanged)

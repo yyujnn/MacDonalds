@@ -34,7 +34,7 @@ struct LaunchView: View {
                 triggerTopBreadAnimation = true
             }
             .onChange(of: triggerTopBreadAnimation) { _ in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                     withAnimation(.bouncy(duration: 0.2)) {
                         topBreadRotation = 8
                         topBreadScale = 1.0
@@ -96,7 +96,7 @@ struct PattyView: View {
             .foregroundColor(pattyColor)
             .offset(x: vibrationOffset)
             .onAppear {
-                withAnimation(.linear(duration: 3)) {
+                withAnimation(.linear(duration: 2)) {
                     pattyColor = .brown
                 }
                 // 진동 시작
@@ -122,7 +122,7 @@ struct PattyView: View {
         }
         
         // 3초 후에 진동 멈춤
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             isVibrating = false
         }
     }
