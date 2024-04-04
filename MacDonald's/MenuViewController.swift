@@ -15,7 +15,7 @@ class MenuViewController: UIViewController {
     
     var burgerItems: [MenuItem] = [baconCheeseBurger, cheeseBurger, doubleBaconBurger, tripleBurger, doubleBurger, singleBurger]
     var sideItems: [MenuItem] = [cheesepotato, chiliCheesePotato, chiliCheeseFries, friesSmall, friesMedium, friesLarge]
-    var drinkItems: [MenuItem] = [coke, cokeZero, sprite]
+    var drinkItems: [MenuItem] = [coke, cokeZero, sprite, mountainDew, fanta]
     var saladItems: [MenuItem] = [avocadoChickenSalad, caesarChikenSalad]
     
     override func viewDidLoad() {

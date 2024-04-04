@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="FcC-hq-t26">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="tzA-pb-mZd">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -62,42 +62,6 @@
             </objects>
             <point key="canvasLocation" x="1052.6717557251909" y="-28.169014084507044"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="5p0-Yz-TQT">
-            <objects>
-                <navigationController id="p14-HA-7UO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="277-qf-d6X"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="E4r-LB-SJv">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="t6P-si-1hg" kind="relationship" relationship="rootViewController" id="Dc2-7a-xRL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lpI-63-kJB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1063" y="-808"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Hut-nh-IBG">
-            <objects>
-                <tabBarController id="FcC-hq-t26" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="o8R-kh-5cz">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="Z4X-Ao-fmL" kind="relationship" relationship="viewControllers" id="iem-Do-mSG"/>
-                        <segue destination="p14-HA-7UO" kind="relationship" relationship="viewControllers" id="W4W-6m-T6J"/>
-                        <segue destination="lVD-OP-hNu" kind="relationship" relationship="viewControllers" id="cgI-LV-Cc0"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="w7b-uJ-YLW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1063" y="-1532"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="4ya-P8-k0V">
             <objects>
@@ -129,13 +93,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="장바구니" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XAl-ED-27O">
-                                <rect key="frame" x="16" y="119" width="86.666666666666671" height="30"/>
+                                <rect key="frame" x="16" y="75" width="86.666666666666671" height="30"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WS8-iP-EDu">
-                                <rect key="frame" x="0.0" y="165" width="393" height="565"/>
+                                <rect key="frame" x="0.0" y="121" width="393" height="565"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="565" id="eLf-Ru-OsT"/>
@@ -152,7 +116,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DlF-Fb-UZ4">
-                                <rect key="frame" x="30" y="709" width="333" height="50"/>
+                                <rect key="frame" x="30" y="758" width="333" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.71372549019999998" blue="0.75686274509999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Kee-xv-i9e"/>
@@ -164,7 +128,7 @@
                                 </buttonConfiguration>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="66" translatesAutoresizingMaskIntoConstraints="NO" id="iMO-LX-3EF">
-                                <rect key="frame" x="39.666666666666657" y="760" width="313.66666666666674" height="24"/>
+                                <rect key="frame" x="39.666666666666657" y="716" width="313.66666666666674" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 주문 내역" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="76z-oE-pzr">
                                         <rect key="frame" x="0.0" y="0.0" width="82.333333333333329" height="24"/>
@@ -187,7 +151,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0f-sA-I8S">
-                                <rect key="frame" x="236" y="117" width="141" height="142"/>
+                                <rect key="frame" x="236" y="73" width="141" height="142"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="button:l0f-sA-I8S:image"/>
@@ -223,41 +187,7 @@
             </objects>
             <point key="canvasLocation" x="1938" y="-28"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="emh-pf-rD9">
-            <objects>
-                <navigationController id="lVD-OP-hNu" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="FlT-3W-FJo"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="u0L-Wl-SHX">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uyf-Gb-1Ko" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1731" y="-808"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="j08-Ei-naH">
-            <objects>
-                <navigationController id="Z4X-Ao-fmL" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="cart" catalog="system" id="0as-r7-53o"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qh7-1I-JaL">
-                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="rootViewController" id="U3P-Hs-DnD"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2eX-VY-oZi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="373" y="-808"/>
-        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Kx7-LQ-J72"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="button:l0f-sA-I8S:image" width="117" height="128">
             <mutableData key="keyedArchiveRepresentation">

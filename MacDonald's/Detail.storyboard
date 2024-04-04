@@ -17,16 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWI-4b-q3Q" userLabel="CartButton">
-                                <rect key="frame" x="329.33333333333331" y="52" width="53.666666666666686" height="34.333333333333343"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system">
-                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="cartButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8eV-tc-MFe"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4t6-Ok-fcP">
                                 <rect key="frame" x="100" y="109" width="193" height="193"/>
                                 <constraints>
@@ -120,18 +110,22 @@
                                     <constraint firstItem="9d5-AQ-r6h" firstAttribute="height" secondItem="InT-hh-1PY" secondAttribute="height" id="a8J-Ri-2xj"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MacDonalds's" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIh-Ld-7PJ">
-                                <rect key="frame" x="138.66666666666666" y="59.000000000000007" width="115.66666666666666" height="20.333333333333336"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-RT-be9" userLabel="Food Description">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3kZ-RT-be9" userLabel="Food Description">
                                 <rect key="frame" x="30" y="317" width="333" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWI-4b-q3Q" userLabel="CartButton">
+                                <rect key="frame" x="329.33333333333331" y="59" width="53.666666666666686" height="34.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="cart" catalog="system">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="cartButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="8eV-tc-MFe"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -142,11 +136,9 @@
                             <constraint firstItem="3kZ-RT-be9" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-30" id="DT0-85-MhW"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="48n-eK-Cdg" secondAttribute="bottom" constant="10" id="EIN-aG-fYK"/>
                             <constraint firstItem="AEh-b6-5kQ" firstAttribute="top" secondItem="3kZ-RT-be9" secondAttribute="bottom" constant="15" id="FUL-3E-sdP"/>
-                            <constraint firstItem="sIh-Ld-7PJ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Prq-Kr-zTR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dWI-4b-q3Q" secondAttribute="trailing" constant="10" id="W0F-UU-LkM"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="dWI-4b-q3Q" secondAttribute="top" constant="7" id="X3s-ZX-yqA"/>
                             <constraint firstItem="3kZ-RT-be9" firstAttribute="top" secondItem="4t6-Ok-fcP" secondAttribute="bottom" constant="15" id="ZOI-1o-MLK"/>
-                            <constraint firstItem="sIh-Ld-7PJ" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="fFF-wp-zGB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="top" secondItem="dWI-4b-q3Q" secondAttribute="top" id="Zjn-t9-G04"/>
                             <constraint firstItem="48n-eK-Cdg" firstAttribute="top" secondItem="AEh-b6-5kQ" secondAttribute="bottom" constant="50" id="gJR-LI-Jwb"/>
                             <constraint firstItem="4t6-Ok-fcP" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="100" id="odb-ta-SjV"/>
                             <constraint firstItem="3kZ-RT-be9" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="uNT-pI-gQD"/>

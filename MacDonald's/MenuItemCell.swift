@@ -9,13 +9,14 @@ import UIKit
 
 class MenuItemCell: UITableViewCell {
     
-    // UI 컴포넌트 부르기?
+    // UI 컴포넌트 부르기
     let menuItemImageView = UIImageView()
     let nameLabel = UILabel()
     let priceLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.selectionStyle = .none
         addSubview(menuItemImageView)
         addSubview(nameLabel)
         addSubview(priceLabel)
@@ -25,6 +26,7 @@ class MenuItemCell: UITableViewCell {
         setImageConstraints()
         setNameLabelConstraints()
         setPriceLabelConstraints()
+        
     }
     
     required init?(coder: NSCoder) {
