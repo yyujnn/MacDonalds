@@ -15,7 +15,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var descriptionLabel: UILabel!
     
     // MenuVC로부터 받아올 Menu 정보
-    var menu: Menu?
+    // var menu: Menu?
+    var menu:Menu? = DataStorage.testMenu
     
     // 메인메뉴 주문 갯수
     var count: Int = 1
@@ -65,6 +66,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             guard let menu = self.menu else { return }
             DataStorage.cartList.append(menu)
             self.detailTableView.reloadData()
+            print(DataStorage.cartList)
         })
         // 취소 버튼
         let cancelButton = UIAlertAction(title: "취소", style: .default, handler: nil)

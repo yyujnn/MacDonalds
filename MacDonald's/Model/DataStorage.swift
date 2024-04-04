@@ -23,7 +23,7 @@ struct DataStorage {
         name: "치즈 버거",
         description: "Fresh British beef topped with cheese, pickles, onions, tomatoes, crisp lettuce, Heinz ketchup, and Heinz mayo. It's big flavour at a savoury price.",
         price: 3400,
-        image: "cheeze",
+        image: "cheese",
         type: .burger
     )
 }
