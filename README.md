@@ -9,21 +9,21 @@
 
 화면을 통해 원하는 메뉴를 선택하여 주문할 수 있습니다.
 
-<br><br>
+<br>
 
 
 ## 🗓️개발 기간
 2024.04.01(월) ~ 2024.04.05(금) 
 
-<br><br>
+<br>
 
 ## 🤼 팀원 구성
 <table>
   <tbody>
-      <td align="center"><img src=""width="100px;" alt=""/><br /><sub><a href="https://github.com/yyujnn"><b>팀장 : 정유진</b></sub></a><br /></td>
+      <td align="center"><img src="https://github.com/yyujnn/MacDonalds/assets/129912074/68d060e5-47f4-435b-a757-f803236e7bef"width="100px;" alt=""/><br /><sub><a href="https://github.com/yyujnn"><b>팀장 : 정유진</b></sub></a><br /></td>
       <td align="center"><img src="" width="100px;" alt=""/><br /><sub><a href="https://github.com/yeggrrr"><b>팀원 : 김예진</b></sub></a><br /></td>
       <td align="center"><img src="" width="100px;" alt=""/><br /><sub><a href="https://github.com/jungkweon93"><b>팀원 : 박중권</b></sub></a><br /></td>
-      <td align="center"><img src="" width="100px;" alt=""/><br /><sub><a href="https://github.com/mgynsz"><b>팀원 : 장진영</b></sub></a><br /></td>
+      <td align="center"><img src="https://github.com/yyujnn/MacDonalds/assets/129912074/27b8fad0-66b3-4fbd-a18b-a70dca5f14cf" width="100px;" alt=""/><br /><sub><a href="https://github.com/mgynsz"><b>팀원 : 장진영</b></sub></a><br /></td>
   </tbody>
 </table>
 
@@ -45,7 +45,7 @@
 - UIKit
 - TableView
 - MVC
-<br><br><br>
+<br><br>
 
 ## 🧵 주요 기능
 #### 1) 메인 page
@@ -62,9 +62,7 @@
 - 메뉴 수량 변경과 삭제
 - 결제 버튼
 
-<br><br><br>
-
-
+<br>
 
 ## 📺 UI 구성
 <img width="574" src="https://github.com/yyujnn/MacDonalds/assets/161591832/40b19608-ac92-4d38-b6c3-91f33281b51a">
