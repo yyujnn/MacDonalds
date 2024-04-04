@@ -170,11 +170,7 @@ extension CartViewController: UITableViewDelegate {
     // 사용자가 셀을 삭제할 때 호출됩니다.
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // 삭제하려는 셀의 인덱스
-            let index = indexPath.row
-            
-            // 데이터 소스에서 셀 삭제
-            orderArray.remove(at: index)
+            DataStorage.shared.orderArray.remove(at: indexPath.row)
             
             // 테이블 뷰에서 셀 삭제
             tableView.deleteRows(at: [indexPath], with: .automatic)
