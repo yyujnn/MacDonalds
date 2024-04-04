@@ -21,12 +21,16 @@
 <table>
   <tbody>
       <td align="center"><img src=""width="100px;" alt=""/><br /><sub><a href="https://github.com/yyujnn"><b>팀장 : 정유진</b></sub></a><br /></td>
-      <td align="center"><img src="" width="100px;" alt=""/><br /><sub><a href="https://github.com/JayBadass"><b>팀원 : 김예진</b></sub></a><br /></td>
-      <td align="center"><img src="" width="100px;" alt=""/><br /><sub><a href="https://github.com/LeeJaeheee"><b>팀원 : 박중권</b></sub></a><br /></td>
-      <td align="center"><img src="" width="100px;" alt=""/><br /><sub><a href="https://github.com/Heasoobean"><b>팀원 : 장진영</b></sub></a><br /></td>
+      <td align="center"><img src="" width="100px;" alt=""/><br /><sub><a href="https://github.com/yeggrrr"><b>팀원 : 김예진</b></sub></a><br /></td>
+      <td align="center"><img src="" width="100px;" alt=""/><br /><sub><a href="https://github.com/jungkweon93"><b>팀원 : 박중권</b></sub></a><br /></td>
+      <td align="center"><img src="" width="100px;" alt=""/><br /><sub><a href="https://github.com/mgynsz"><b>팀원 : 장진영</b></sub></a><br /></td>
   </tbody>
 </table>
 
+#### 협업
+- git add / commit / push 활용
+- git 브랜치/ PR / merge 활용
+- github pull request에서 Code review 활용
 <br><br>
 
 
@@ -42,6 +46,24 @@
 - TableView
 - MVC
 <br><br><br>
+
+## 🧵 주요 기능
+#### 1) 메인 page
+- 상단 메뉴 카테고리 바
+- 특정 메뉴 카테고리 선택 시, 메뉴 카테고리에 해당하는 메뉴들을 표시
+
+#### 2) 메뉴 상세 page
+- 메뉴 정보 확인
+- 메뉴 수량 조절
+- 장바구니에 추가
+
+#### 3) 장바구니 page
+- 주문 내역 확인
+- 메뉴 수량 변경과 삭제
+- 결제 버튼
+
+<br><br><br>
+
 
 
 ## 📺 UI 구성
