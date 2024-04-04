@@ -29,23 +29,23 @@ let chiliCheesePotato = MenuItem(name: "칠리 치즈 감자 베이크", descrip
 
 let chiliCheeseFries = MenuItem(name: "칠리 치즈 감자튀김", description: "껍질을 벗기지 않은 자연산 천일염 감자튀김에 풍성한 칠리, 따뜻하고 크리미한 치즈 소스, 슈레드 체다 치즈를 추가했습니다. 쉽게 이길 수 없는 이 맛에 바로 사랑에 빠지실 겁니다!", price: 2800, image: "chiliCheeseFries", calories: 481, type: .side)
 
-let friesSmall = MenuItem(name: "감자튀김 스몰", description: "껍질을 벗기지 않은 자연산 천일염 감자튀김이 따뜻하고 바삭하게 제공됩니다. 전 세계가 사랑하는 데에는 이유가 있습니다!", price: 900, image: "friesSmall", calories: 176, type: .side)
+let friesSmall = MenuItem(name: "감자튀김 스몰", description: "껍질을 벗기지 않은 자연산 천일염 감자튀김이 따뜻하고 바삭하게 제공됩니다. 전 세계가 사랑하는 데에는 이유가 있습니다!", price: 2900, image: "friesSmall", calories: 176, type: .side)
 
-let friesMedium = MenuItem(name: "감자튀김 미디움", description: "껍질을 벗기지 않은 자연산 천일염 감자튀김이 따뜻하고 바삭하게 제공됩니다. 전 세계가 사랑하는 데에는 이유가 있습니다!", price: 1200, image: "friesMedium", calories: 239, type: .side)
+let friesMedium = MenuItem(name: "감자튀김 미디움", description: "껍질을 벗기지 않은 자연산 천일염 감자튀김이 따뜻하고 바삭하게 제공됩니다. 전 세계가 사랑하는 데에는 이유가 있습니다!", price: 3200, image: "friesMedium", calories: 239, type: .side)
 
-let friesLarge = MenuItem(name: "감자튀김 라지", description: "껍질을 벗기지 않은 자연산 천일염 감자튀김이 따뜻하고 바삭하게 제공됩니다. 전 세계가 사랑하는 데에는 이유가 있습니다!", price: 1400, image: "friesLarge", calories: 299, type: .side)
+let friesLarge = MenuItem(name: "감자튀김 라지", description: "껍질을 벗기지 않은 자연산 천일염 감자튀김이 따뜻하고 바삭하게 제공됩니다. 전 세계가 사랑하는 데에는 이유가 있습니다!", price: 4000, image: "friesLarge", calories: 299, type: .side)
 
 
 // 음료 메뉴
-let coke = MenuItem(name: "콜라", price: 1200, image: "coke", type: .drink)
-let cokeZero = MenuItem(name: "제로 콜라", price: 1200, image: "cokeZero", type: .drink)
-let sprite = MenuItem(name: "스프라이트", price: 1200, image: "sprite", type: .drink)
-let mountainDew = MenuItem(name: "마운틴듀", price: 1200, image: "mountainDew", type: .drink)
-let fanta = MenuItem(name: "환타", price: 1200, image: "fanta", type: .drink)
+let coke = MenuItem(name: "콜라", price: 2000, image: "coke", type: .drink)
+let cokeZero = MenuItem(name: "제로 콜라", price: 2000, image: "cokeZero", type: .drink)
+let sprite = MenuItem(name: "스프라이트", price: 2000, image: "sprite", type: .drink)
+let mountainDew = MenuItem(name: "마운틴듀", price: 3000, image: "mountainDew", type: .drink)
+let fanta = MenuItem(name: "환타", price: 2000, image: "fanta", type: .drink)
 
 
 // 샐러드 매뉴
-let avocadoChickenSalad = MenuItem(name: "아보카도 치킨 샐러드", description: "시그니처 양상추 블렌드, 체다 치즈, 다진 토마토, 시원하고 크리미한 아보카도, 애플우드 훈제 베이컨, 그릴에서 갓 구운 닭가슴살에 사우스웨스트 랜치 드레싱을 뿌려 매일 신선한 재료로 만듭니다! ", price: 5900, image: "avocadoChickenSalad", calories: 485, type: .salad)
+let avocadoChickenSalad = MenuItem(name: "아보카도 치킨 샐러드", description: "시그니처 양상추 블렌드, 체다 치즈, 다진 토마토, 시원하고 크리미한 아보카도, 애플우드 훈제 베이컨, 그릴에서 갓 구운 닭가슴살에 사우스웨스트 랜치 드레싱을 뿌려 매일 신선한 재료로 만듭니다! ", price: 15900, image: "avocadoChickenSalad", calories: 485, type: .salad)
 
-let caesarChikenSalad = MenuItem(name: "시저 치킨 샐러드", description: "로메인 양상추, 구운 닭가슴살, 이탈리안 치즈, 크리미한 시저 드레싱으로 매일 신선하게 만들어집니다. 한 입만 먹어보면 로메인 그 이상의 맛을 느끼실 겁니다!", price: 4600, image: "caesarChikenSalad", calories: 481, type: .salad)
+let caesarChikenSalad = MenuItem(name: "시저 치킨 샐러드", description: "로메인 양상추, 구운 닭가슴살, 이탈리안 치즈, 크리미한 시저 드레싱으로 매일 신선하게 만들어집니다. 한 입만 먹어보면 로메인 그 이상의 맛을 느끼실 겁니다!", price: 14600, image: "caesarChikenSalad", calories: 481, type: .salad)
 

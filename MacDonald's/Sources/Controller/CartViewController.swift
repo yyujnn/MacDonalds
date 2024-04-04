@@ -137,7 +137,8 @@ extension CartViewController: UITableViewDataSource {
         cell.orderPriceLabel.text = "₩\(totalPriceForItem.formattedWithSeparator)"
         // 셀의 스텝퍼 초기 값을 주문 수량으로 설정
         cell.countStepper.value = Double(order.quantity)
-        
+        cell.countStepper.backgroundColor = .systemYellow
+        cell.countStepper.layer.cornerRadius = 8
         // 수량 업데이트
         cell.updateQuantityHandler = { [weak self] quantity in
             guard let self = self else { return }

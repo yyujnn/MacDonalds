@@ -39,6 +39,7 @@ class MenuItemCell: UITableViewCell {
     
     // 셀 모델 이름 설정
     func configureNameLabel() {
+        nameLabel.font = .systemFont(ofSize: 17, weight: .bold)
         nameLabel.numberOfLines = 0
         nameLabel.adjustsFontSizeToFitWidth = true
         menuItemImageView.contentMode = .scaleAspectFit
@@ -47,6 +48,8 @@ class MenuItemCell: UITableViewCell {
     
     // 셀 가격 설정
     func configurePriceLabel() {
+        priceLabel.textColor = .systemOrange
+        priceLabel.font = .systemFont(ofSize: 15, weight: .bold)
         priceLabel.numberOfLines = 1
         priceLabel.adjustsFontSizeToFitWidth = true
         priceLabel.translatesAutoresizingMaskIntoConstraints = false

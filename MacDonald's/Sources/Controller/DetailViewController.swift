@@ -11,8 +11,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var menuImageView: UIImageView!
     @IBOutlet weak var totalAmountLabel: UILabel!
     @IBOutlet weak var addToCartButton: UIButton!
-    @IBOutlet weak var goToCartButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var calorieLabel: UILabel!
     
     // MenuVC로부터 받아올 Menu 정보
     var menu: Menu?
@@ -23,8 +23,21 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = menu?.name
         tableViewConfigure()
         viewConfigure()
+        configureNavigationBar()
+    }
+    
+    func configureNavigationBar() {
+        // 장바구니로 가기 버튼 생성
+        let goToButton = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(cartButtonTapped))
+        self.navigationItem.rightBarButtonItem = goToButton
+        self.navigationItem.rightBarButtonItem?.tintColor = .systemOrange
+        
+        // 네비에게이션바 디자인 변경
+        self.navigationController?.navigationBar.tintColor = .systemOrange
+        self.navigationController?.navigationBar.topItem?.title = ""
     }
     
     // UI와 관련된 초기 설정
@@ -36,11 +49,19 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             descriptionLabel.text = "잠시후 다시 시도해주세요."
         }
         
+        if let calories = menu?.calories {
+            self.calorieLabel.text = "(\(calories) kcal)"
+        } else {
+            self.calorieLabel.text = "(- kcal)"
+        }
+        self.calorieLabel.textColor = .systemOrange
+        self.calorieLabel.font = .systemFont(ofSize: 15, weight: .semibold)
+        
         self.totalAmountLabel.layer.masksToBounds = true
         self.totalAmountLabel.layer.cornerRadius = 15
         self.addToCartButton.layer.masksToBounds = true
         self.addToCartButton.layer.cornerRadius = 15
-        self.addToCartButton.backgroundColor = .systemPink
+        self.addToCartButton.backgroundColor = .systemOrange
         self.totalAmountLabel.backgroundColor = .lightGray
     }
     
@@ -72,7 +93,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         self.present(alert, animated: true)
     }
     
-    @IBAction func cartButtonTapped(_ sender: Any) {
+    @objc func cartButtonTapped() {
         let storyboard = UIStoryboard(name: "Cart", bundle: nil)
         guard let cartViewController = storyboard.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController else { return }
         cartViewController.modalPresentationStyle = .pageSheet
@@ -91,9 +112,13 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         cell.countLabel.text = "\(count)"
         let totalAmount = (menu.price) * count
         totalAmountLabel.text = "총 금액: \(totalAmount.formattedWithSeparator)원"
+        cell.menuPriceLabel.textColor = .systemOrange
+        cell.menuPriceLabel.font = .systemFont(ofSize: 15, weight: .bold)
         
         cell.countStepper.tag = indexPath.row
         cell.countStepper.addTarget(self, action: #selector(stepperClicked), for: .valueChanged)
+        cell.countStepper.backgroundColor = .systemYellow
+        cell.countStepper.layer.cornerRadius = 8
         return cell
     }
 }

@@ -41,9 +41,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="MacDonald's" largeTitleDisplayMode="always" id="cwx-Mu-zp9">
                         <barButtonItem key="rightBarButtonItem" changesSelectionAsPrimaryAction="YES" id="ItM-nm-gFa">
-                            <imageReference key="image" image="cart" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
+                            <imageReference key="image" image="cart.fill" catalog="system" symbolScale="large" renderingMode="hierarchical-single">
                                 <hierarchicalColors>
-                                    <color systemColor="labelColor"/>
+                                    <color systemColor="systemOrangeColor"/>
                                     <color systemColor="secondaryLabelColor"/>
                                     <color systemColor="tertiaryLabelColor"/>
                                 </hierarchicalColors>
@@ -16317,15 +16317,15 @@ r4oADq+MAA6vjgAOr5AADq+ZAA6vngAOr6QADq+sAA6vrgAOr7AADq+yAA6vtAAOwVQADsFZAA7BZgAO
 wWkADsF2AA7BewAOwYMADsGGAA7BiwAOwZMAAAAAAAAEAQAAAAAAAABWAAAAAAAAAAAAAAAAAA7Blg
 </mutableData>
         </image>
-        <image name="cart" catalog="system" width="128" height="102"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="cart.fill" catalog="system" width="128" height="102"/>
         <systemColor name="secondaryLabelColor">
             <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

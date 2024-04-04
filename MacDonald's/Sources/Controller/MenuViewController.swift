@@ -24,6 +24,12 @@ class MenuViewController: UIViewController {
         configureSegmentedControl()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        title = "MacDonald's"
+    }
+    
     // 세그먼트 설정
     func configureSegmentedControl() {
         segmentedControl.selectedSegmentIndex = 1
