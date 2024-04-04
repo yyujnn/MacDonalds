@@ -66,7 +66,6 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
             guard let menu = self.menu else { return }
             DataStorage.cartList.append(menu)
             self.detailTableView.reloadData()
-            print(DataStorage.cartList)
         })
         // 취소 버튼
         let cancelButton = UIAlertAction(title: "취소", style: .default, handler: nil)
