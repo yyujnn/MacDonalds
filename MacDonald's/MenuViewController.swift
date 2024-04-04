@@ -1,102 +1,123 @@
 //
-//  ViewController.swift
+//  MenuViewController.swift
 //  MacDonald's
 //
-//  Created by 정유진 on 2024/04/01.
+//  Created by David Jang on 4/3/24.
 //
 
+import Foundation
 import UIKit
 
 class MenuViewController: UIViewController {
-
-   
-    @IBOutlet weak var categoryCollectionView: UICollectionView!
     
-    let tempCategoryArray = ["추천", "콤보", "버거", "사이드", "샐러드", "음료", "스크롤", "스크롤", "스크롤"]
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
+    var tableView = UITableView()
     
+    var burgerItems: [MenuItem] = [baconCheese, cheese, doubleBacon, triple, doublee, singlee]
+    var sideItems: [MenuItem] = [cheesepotato, chiliCheesePotato, chiliCheeseFries, friesSmall, friesMedium, friesLarge]
+    var drinkItems: [MenuItem] = [coke, cokeZero, sprite]
+    var saladItems: [MenuItem] = [avocadoChickenSalad, caesarChikenSalad]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("MenuVC - viewDidLoad() called")
+        view.backgroundColor = UIColor(named: "BackgroundColor")
         
-        // 콜렉션 뷰에 대한 설정
-        categoryCollectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        categoryCollectionView.dataSource = self
-        categoryCollectionView.delegate = self
+        segmentedControl.selectedSegmentIndex = 1
+        configureTableView()
         
-        // 사용할 컬렉션뷰 cell을 등록
-        let CategoryCollectionViewCellNib = UINib(nibName: String(describing: CategoryCollectionViewCell.self), bundle: nil)
+        // 세그먼트 설정
+        segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            segmentedControl.heightAnchor.constraint(equalToConstant: 40) // 세그먼트 높이
+        ])
         
-        // 가져온 닙파일로 콜렉션뷰에 cell로 등록한다
-        self.categoryCollectionView.register(CategoryCollectionViewCellNib, forCellWithReuseIdentifier: String(describing: CategoryCollectionViewCell.self))
-        
-        // 콜렉션뷰의 콜렉션뷰 레이아웃을 설정한다. -> 컴포지셔널 레이아웃
-        self.categoryCollectionView.collectionViewLayout = createCompositionalLayout()
-        
+        segmentedControl.removeAllSegments() // 기존 세그먼트 지우기!
+        segmentedControl.insertSegment(withTitle: "버거", at: 0, animated: false)
+        segmentedControl.insertSegment(withTitle: "사이드", at: 1, animated: false)
+        segmentedControl.insertSegment(withTitle: "샐러드", at: 2, animated: false)
+        segmentedControl.insertSegment(withTitle: "드링크", at: 3, animated: false)
+        segmentedControl.selectedSegmentIndex = 0 // 첫 번째 세그먼트 선택
     }
-
-
-}
-// MARK: - 콜렉션뷰 콤포지셔널 레이아웃 관련
-extension MenuViewController {
     
-    // 콤포지셔널 레이아웃 설정
-    fileprivate func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        // 콤포지셔널 레이아웃 생성
-        let layout = UICollectionViewCompositionalLayout {
-            // 만들게 되면 튜플 (키: 값, 키: 값) 의 묶음으로 들어옴 반환 하는 것은 NSCollectionLayoutSection 콜렉션 레이아웃 섹션을 반환해야함
-            (sectionIndex: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection? in
-            
-            // 아이템에 대한 사이즈(width, height) - absolute 는 고정값, estimated 는 추측, fraction 퍼센트
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .absolute(40))
-           
-            // -> 가로 높이 1.0: 100퍼센트 02. or 1/3 가능
-            
-            // 위에서 만든 아이템 사이즈로 아이템 만들기
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            
-            // 아이템 간의 간격 설정
-            item.contentInsets = NSDirectionalEdgeInsets(top: 2, leading: 2, bottom: 2, trailing: 10)
-           
-            // 그룹사이즈
-            let grouSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: itemSize.heightDimension)
-            
-            // 변경할 부분
-            let group = NSCollectionLayoutGroup.horizontal(layoutSize: grouSize, subitem: item, count: 5)
-            
-            // 그룹으로 섹션 만들기
-            let section = NSCollectionLayoutSection(group: group)
-            section.orthogonalScrollingBehavior = .continuous
-            
-            // 섹션에 대한 간격 설정
-            section.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 10, bottom: 20, trailing: 10)
-            
-            return section
+    // 장바구니 버튼 이동 로직
+    @IBAction func cartButtonTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "CartViewController", bundle: nil)
+        
+        if let cartViewController = storyboard.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController {
+            cartViewController.modalPresentationStyle = .pageSheet
+            present(cartViewController, animated: true, completion: nil)
         }
-        return layout
+    }
     
+    // 테이블뷰 레이아웃
+    func configureTableView() {
+        view.addSubview(tableView)
+        setTableViewDelegates()
+        tableView.rowHeight = 130
+        tableView.backgroundColor = .clear  // 배경색을 보이게 투명으로
+        
+        tableView.register(MenuItemCell.self, forCellReuseIdentifier: "MenuItemCell")
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: segmentedControl.bottomAnchor, constant: 8),
+            tableView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 16),
+            tableView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -16),
+            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        ])
+    }
+    
+    // 세그먼트 탭하면 테이블뷰 다시 불러오기
+    @IBAction func segmentedFunction(_ sender: Any) {
+        tableView.reloadData()
+    }
+    
+    func setTableViewDelegates() {
+        tableView.delegate = self
+        tableView.dataSource = self
     }
 }
 
-
-// 콜렉션 뷰 데이터
-extension MenuViewController: UICollectionViewDataSource {
-    // 각 섹션에 들어가는 아이템 갯수
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.tempCategoryArray.count
+extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        switch segmentedControl.selectedSegmentIndex {
+            case 0:
+                return burgerItems.count
+            case 1:
+                return sideItems.count
+            case 2:
+                return saladItems.count
+            case 3:
+                return drinkItems.count
+            default:
+                return 0
+        }
     }
-    // 각 콜렉션뷰 셀에 대한 설정
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: CategoryCollectionViewCell.self), for: indexPath) as! CategoryCollectionViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath) as? MenuItemCell else { return UITableViewCell() }
         
-        cell.categoryName = self.tempCategoryArray[indexPath.item]
+        let menuItem: MenuItem
+        switch segmentedControl.selectedSegmentIndex {
+            case 0:
+                menuItem = burgerItems[indexPath.row]
+            case 1:
+                menuItem = sideItems[indexPath.row]
+            case 2:
+                menuItem = saladItems[indexPath.row]
+            case 3:
+                menuItem = drinkItems[indexPath.row]
+            default:
+                fatalError("Unexpected Segment")
+        }
+        
+        cell.setMenuItem(menuItem: menuItem)
+        cell.backgroundColor = .clear
         
         return cell
     }
-}
-// 콜렉션 뷰 델리게이트
-extension MenuViewController: UICollectionViewDelegate {
-    
 }
 

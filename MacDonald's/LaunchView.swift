@@ -43,10 +43,11 @@ struct LaunchView: View {
             }
         }
         .onAppear {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
-                        NotificationCenter.default.post(name: NSNotification.Name("AdvanceToNextScreen"), object: nil)
-                    }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    // "advanceToNextScreen" 알림 전송
+                    NotificationCenter.default.post(name: NSNotification.Name("AdvanceToNextScreen"), object: nil)
                 }
+        }
     }
 }
 
@@ -133,6 +134,8 @@ struct PattyView: View {
     }
 }
 
-#Preview {
-    LaunchView()
+struct LaunchView_Previews: PreviewProvider {
+    static var previews: some View {
+        LaunchView()
+    }
 }

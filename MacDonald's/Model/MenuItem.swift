@@ -17,9 +17,9 @@ let doubleBacon = MenuItem(name: "더블 베이컨 버거", description: "A half
 
 let triple = MenuItem(name: "트리플 버거", description: "Three quarters of a pound* of fresh British beef, American cheese, crisp lettuce, tomato, pickle, Heinz ketchup, Heinz mayo, and onion on a toasted bun. Use both hands!", price: 5400, image: "triple", calories: 1204, type: .burger)
 
-let double = MenuItem(name: "더블 버거", description: "A half-pound* of fresh British beef, American cheese, crisp lettuce, tomato, pickle, Heinz ketchup, Heinz mayo, and onion on a toasted bun. More meat means more to love.", price: 4800, image: "double", calories: 888, type: .burger)
+let doublee = MenuItem(name: "더블 버거", description: "A half-pound* of fresh British beef, American cheese, crisp lettuce, tomato, pickle, Heinz ketchup, Heinz mayo, and onion on a toasted bun. More meat means more to love.", price: 4800, image: "doublee", calories: 888, type: .burger)
 
-let single = MenuItem(name: "싱글 버거", description: "A quarter-pound* of fresh British beef, American cheese, crisp lettuce, tomato, pickle, Heinz ketchup, Heinz mayo, and onion on a toasted bun just the way Dave intended.", price: 3900, image: "single", calories: 524, type: .burger)
+let singlee = MenuItem(name: "싱글 버거", description: "A quarter-pound* of fresh British beef, American cheese, crisp lettuce, tomato, pickle, Heinz ketchup, Heinz mayo, and onion on a toasted bun just the way Dave intended.", price: 3900, image: "singlee", calories: 524, type: .burger)
 
 
 // 사이드 메뉴
