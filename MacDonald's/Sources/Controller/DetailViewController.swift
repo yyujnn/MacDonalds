@@ -73,7 +73,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     @IBAction func cartButtonTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "CartViewController", bundle: nil)
+        let storyboard = UIStoryboard(name: "Cart", bundle: nil)
         guard let cartViewController = storyboard.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController else { return }
         cartViewController.modalPresentationStyle = .pageSheet
         self.present(cartViewController, animated: true)

@@ -1,8 +1,8 @@
 //
-//  Utility.swift
+//  Formatter+.swift
 //  MacDonald's
 //
-//  Created by David Jang on 4/4/24.
+//  Created by YJ on 4/5/24.
 //
 
 import Foundation
@@ -14,11 +14,4 @@ extension Formatter {
         formatter.numberStyle = .decimal
         return formatter
     }()
-}
-
-// Int -> String
-extension Numeric {
-    var formattedWithSeparator: String {
-        return Formatter.withSeparator.string(for: self) ?? ""
-    }
 }

@@ -5,7 +5,6 @@
 //  Created by David Jang on 4/3/24.
 //
 
-import Foundation
 import UIKit
 
 class MenuViewController: UIViewController {
@@ -43,7 +42,7 @@ class MenuViewController: UIViewController {
     
     // 장바구니 버튼 이동 로직
     @IBAction func cartButtonTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "CartViewController", bundle: nil)
+        let storyboard = UIStoryboard(name: "Cart", bundle: nil)
         guard let cartViewController = storyboard.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController else { return }
         cartViewController.modalPresentationStyle = .pageSheet
         present(cartViewController, animated: true)

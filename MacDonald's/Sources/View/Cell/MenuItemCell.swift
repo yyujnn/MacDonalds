@@ -6,7 +6,6 @@
 //
 import UIKit
 
-
 class MenuItemCell: UITableViewCell {
     let menuItemImageView = UIImageView()
     let nameLabel = UILabel()

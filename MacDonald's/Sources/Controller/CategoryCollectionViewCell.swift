@@ -5,7 +5,6 @@
 //  Created by 정유진 on 2024/04/01.
 //
 
-import Foundation
 import UIKit
 
 class CategoryCollectionViewCell: UICollectionViewCell {
