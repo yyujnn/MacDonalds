@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         window.makeKeyAndVisible()
         // 내가 원하는 Storybaord를 시작점으로 설정
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             // MARK: ⚠️ 함수 인자(to:)만 수정하세요! ⚠️
             // 만약 잘 안된다면 두가지 확인하기
             // 1. 오타는 없는지

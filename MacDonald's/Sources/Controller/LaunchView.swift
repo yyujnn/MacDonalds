@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LaunchView: View {
-    @State private var pattyColor: Color = .pink.opacity(0.5)
+    @State private var pattyColor: Color = .pink
     @State private var topBreadRotation: Double = -30
     @State private var topBreadScale: CGFloat = 1.0
     
@@ -17,7 +17,10 @@ struct LaunchView: View {
     
     var body: some View {
         ZStack {
-            Color.green.opacity(0.3).edgesIgnoringSafeArea(.all)
+            // Color.orange.opacity(0.3).edgesIgnoringSafeArea(.all)
+            Color("LaunchBackgrounColor").edgesIgnoringSafeArea(.all)
+            
+
             VStack {
                 TopBreadView(topBreadRotation: $topBreadRotation, topBreadScale: $topBreadScale)
                 LettuceView()
@@ -29,7 +32,7 @@ struct LaunchView: View {
                 triggerTopBreadAnimation = true
             }
             .onChange(of: triggerTopBreadAnimation) { _ in
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     withAnimation(.bouncy(duration: 0.2)) {
                         topBreadRotation = 8
                         topBreadScale = 1.0
@@ -62,6 +65,7 @@ struct BottomBreadView: View {
 }
 
 struct LettuceView: View {
+    let lettuceColor = Color("LettuceColor")
     var body: some View {
         // 물결 패턴
         Path { path in
@@ -71,7 +75,7 @@ struct LettuceView: View {
             path.addCurve(to: CGPoint(x: 60, y: 10), control1: CGPoint(x: 45, y: 0), control2: CGPoint(x: 55, y: 20))
             path.addCurve(to: CGPoint(x: 80, y: 10), control1: CGPoint(x: 65, y: 0), control2: CGPoint(x: 75, y: 20))
         }
-        .stroke(Color.green, lineWidth: 4)
+        .stroke(lettuceColor, lineWidth: 4)
         .frame(width: 80, height: 15)
     }
 }
@@ -81,14 +85,15 @@ struct PattyView: View {
     @State private var vibrationOffset: CGFloat = 0.0
     @State private var isVibrating: Bool = false
     
+    let pattyBrownColor = Color("PattyColor")
     var body: some View {
         RoundedRectangle(cornerRadius: 24)
             .frame(width: 88, height: 15)
             .foregroundColor(pattyColor)
             .offset(x: vibrationOffset)
             .onAppear {
-                withAnimation(.linear(duration: 2)) {
-                    pattyColor = .brown
+                withAnimation(.linear(duration: 1)) {
+                    pattyColor = pattyBrownColor
                 }
                 // 진동 시작
                 isVibrating = true
@@ -112,7 +117,7 @@ struct PattyView: View {
         }
         
         // 3초 후에 진동 멈춤
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             isVibrating = false
         }
     }
