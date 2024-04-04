@@ -8,20 +8,16 @@
 import Foundation
 
 protocol Menu {
-    
     var id: UUID { get }
     var name: String { get }
     var description: String? { get }
     var price: Int { get }
     var image: String { get }
     var calories: Int? { get }
-    
 }
 
 enum FoodType {
-    
     case burger, side, salad, drink
-    
 }
 
 struct MenuItem: Menu {
@@ -33,5 +29,4 @@ struct MenuItem: Menu {
     var image: String
     var calories: Int?
     var type: FoodType
-    
 }

@@ -19,7 +19,7 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(named: "BackgroundColor")
+        view.backgroundColor = UIColor(named: "menuBackgroundColor")
         configureTableView()
         configureSegmentedControl()
     }
@@ -59,7 +59,7 @@ class MenuViewController: UIViewController {
         view.addSubview(tableView)
         setTableViewDelegates()
         tableView.rowHeight = 130
-        tableView.backgroundColor = .clear  // 배경색을 보이게 투명으로
+        tableView.backgroundColor = .clear
         
         tableView.register(MenuItemCell.self, forCellReuseIdentifier: "MenuItemCell")
         
