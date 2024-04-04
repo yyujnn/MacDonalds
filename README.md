@@ -21,8 +21,8 @@
 <table>
   <tbody>
       <td align="center"><img src="https://github.com/yyujnn/MacDonalds/assets/129912074/68d060e5-47f4-435b-a757-f803236e7bef"width="100px;" alt=""/><br /><sub><a href="https://github.com/yyujnn"><b>팀장 : 정유진</b></sub></a><br /></td>
-      <td align="center"><img src="" width="100px;" alt=""/><br /><sub><a href="https://github.com/yeggrrr"><b>팀원 : 김예진</b></sub></a><br /></td>
-      <td align="center"><img src="" width="100px;" alt=""/><br /><sub><a href="https://github.com/jungkweon93"><b>팀원 : 박중권</b></sub></a><br /></td>
+      <td align="center"><img src="https://github.com/yyujnn/MacDonalds/assets/129912074/3fb62f8c-9ede-478c-bb75-2c82b4702a88" width="100px;" alt=""/><br /><sub><a href="https://github.com/yeggrrr"><b>팀원 : 김예진</b></sub></a><br /></td>
+      <td align="center"><img src="https://github.com/yyujnn/MacDonalds/assets/129912074/8cb95b56-44f0-4d04-acf8-18140999c151" width="100px;" alt=""/><br /><sub><a href="https://github.com/jungkweon93"><b>팀원 : 박중권</b></sub></a><br /></td>
       <td align="center"><img src="https://github.com/yyujnn/MacDonalds/assets/129912074/27b8fad0-66b3-4fbd-a18b-a70dca5f14cf" width="100px;" alt=""/><br /><sub><a href="https://github.com/mgynsz"><b>팀원 : 장진영</b></sub></a><br /></td>
   </tbody>
 </table>
