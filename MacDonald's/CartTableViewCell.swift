@@ -5,11 +5,9 @@
 //  Created by 정유진 on 2024/04/02.
 //
 
-import Foundation
 import UIKit
 
 class CartTableViewCell: UITableViewCell {
-    
     @IBOutlet weak var orderMenuLabel: UILabel!
     @IBOutlet weak var orderPriceLabel: UILabel!
     @IBOutlet weak var orderCountLabel: UILabel!
@@ -19,10 +17,9 @@ class CartTableViewCell: UITableViewCell {
     var index: Int = 0
     
     override func awakeFromNib() {
-        //        print("CartTableViewCell - awakeFromNib() called")
         super.awakeFromNib()
-        self.selectionStyle = .none
         
+        self.selectionStyle = .none
         countStepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
         countStepper.minimumValue = 1
     }
@@ -38,5 +35,4 @@ class CartTableViewCell: UITableViewCell {
         orderPriceLabel.text = "₩" + String(newPrice)
         orderCountLabel.text = "\(quantity)"
     }
-    
 }

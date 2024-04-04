@@ -22,8 +22,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // 장바구니 추가 이벤트 알림!
-        NotificationCenter.default.post(name: NSNotification.Name("orderAdded"), object: nil)
+        
         tableViewConfigure()
         viewConfigure()
     }
@@ -54,37 +53,30 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     // stepper 클릭시, 총 금액 업데이트
     @objc func stepperClicked(_ sender: UIStepper) {
         count = Int(sender.value)
-        print(count)
         self.detailTableView.reloadData()
     }
     
     // 담기 버튼 alert 추가
     @IBAction func addToCartButtonClicked(_ sender: Any) {
-        
         let alert = UIAlertController(title: "장바구니 담기", message: "해당 상품을 추가하시겠습니까?", preferredStyle: .alert)
-        
         let addButton = UIAlertAction(title: "추가", style: .default) { [weak self] _ in
             guard let self = self, let menu = self.menu as? MenuItem else { return }
-            
             let newOrder = OrderMenu(menu: menu, quantity: self.count)
             DataStorage.shared.orderArray.append(newOrder)
-            NotificationCenter.default.post(name: NSNotification.Name("orderAdded"), object: nil)
-            
-            self.dismiss(animated: true, completion: nil)
+            self.dismiss(animated: true)
         }
         
-        let cancelButton = UIAlertAction(title: "취소", style: .default, handler: nil)
+        let cancelButton = UIAlertAction(title: "취소", style: .default)
         alert.addAction(addButton)
         alert.addAction(cancelButton)
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true)
     }
+    
     @IBAction func cartButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "CartViewController", bundle: nil)
-        
-        if let cartViewController = storyboard.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController {
-            cartViewController.modalPresentationStyle = .pageSheet
-            present(cartViewController, animated: true, completion: nil)
-        }
+        guard let cartViewController = storyboard.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController else { return }
+        cartViewController.modalPresentationStyle = .pageSheet
+        self.present(cartViewController, animated: true)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

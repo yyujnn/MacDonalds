@@ -5,7 +5,6 @@
 //  Created by 정유진 on 2024/04/02.
 //
 
-import Foundation
 import UIKit
 
 // 주문 메뉴 모델
@@ -16,7 +15,6 @@ struct OrderMenu {
 
 // MARK: - 장바구니 뷰컨트롤러
 class CartViewController: UIViewController {
-    
     @IBOutlet weak var orderListTableView: UITableView!
     @IBOutlet weak var orderTotalCount: UILabel!
     @IBOutlet weak var orderTotalPrice: UILabel!
@@ -27,7 +25,6 @@ class CartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NotificationCenter.default.addObserver(self, selector: #selector(handleOrderAdded), name: NSNotification.Name("orderAdded"), object: nil)
         
         self.orderListTableView.dataSource = self
         self.orderListTableView.delegate = self
@@ -42,15 +39,16 @@ class CartViewController: UIViewController {
         self.updateTotal()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        orderListTableView.reloadData() // 테이블 뷰 리로드로 최신 장바구니 목록 반영
+        updateTotal() // 총액 업데이트
+    }
+    
     @objc func handleOrderAdded() {
         self.orderListTableView.reloadData()
         self.updateTotal()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        orderListTableView.reloadData() // 테이블 뷰 리로드로 최신 장바구니 목록 반영
-        updateTotal() // 총액 업데이트
     }
     
     // MARK: - 전체 삭제 버튼
@@ -66,7 +64,6 @@ class CartViewController: UIViewController {
             
             // 총 가격 업데이트
             self?.updateTotal()
-//            print(self.orderArray)
         }
         
         let cancel = UIAlertAction(title: "취소", style: .default)
@@ -105,7 +102,7 @@ class CartViewController: UIViewController {
         alert.addAction(cancelAction)
         
         // 알림창 표시
-        self.present(alert, animated: true, completion: nil)
+        self.present(alert, animated: true)
     }
     
     // MARK: - 총 가격 설정 메서드
@@ -137,7 +134,7 @@ extension CartViewController: UITableViewDataSource {
         cell.orderMenuLabel.text = order.menu.name
         cell.orderCountLabel.text = "\(order.quantity)"
         let totalPriceForItem = price * order.quantity
-            cell.orderPriceLabel.text = "₩\(totalPriceForItem.formattedWithSeparator)"
+        cell.orderPriceLabel.text = "₩\(totalPriceForItem.formattedWithSeparator)"
         // 셀의 스텝퍼 초기 값을 주문 수량으로 설정
         cell.countStepper.value = Double(order.quantity)
         
@@ -153,13 +150,13 @@ extension CartViewController: UITableViewDataSource {
                 cell.orderCountLabel.text = "\(quantity)"
                 cell.orderPriceLabel.text = "₩\(newPrice.formattedWithSeparator)"
             }
-                self.updateTotal()
+            self.updateTotal()
         }
         
         return cell
     }
-    
 }
+
 extension CartViewController: UITableViewDelegate {
     // MARK: - cell 삭제
     // 셀 편집 여부를 설정

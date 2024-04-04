@@ -6,10 +6,8 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct LaunchView: View {
-    
     @State private var pattyColor: Color = .pink.opacity(0.5)
     @State private var topBreadRotation: Double = -30
     @State private var topBreadScale: CGFloat = 1.0
@@ -22,11 +20,8 @@ struct LaunchView: View {
             Color.green.opacity(0.3).edgesIgnoringSafeArea(.all)
             VStack {
                 TopBreadView(topBreadRotation: $topBreadRotation, topBreadScale: $topBreadScale)
-                
                 LettuceView()
-                
                 PattyView(pattyColor: $pattyColor)
-                
                 BottomBreadView()
             }
             .shadow(color: Color.black.opacity(0.5), radius: 16, x: 16, y: 16) // 그림자
@@ -46,7 +41,6 @@ struct LaunchView: View {
 }
 
 struct TopBreadView: View {
-    
     @Binding var topBreadRotation: Double
     @Binding var topBreadScale: CGFloat
     
@@ -60,7 +54,6 @@ struct TopBreadView: View {
 }
 
 struct BottomBreadView: View {
-    
     var body: some View {
         RoundedRectangle(cornerRadius: 24)
             .stroke(Color.yellow, lineWidth: 4)
@@ -69,9 +62,7 @@ struct BottomBreadView: View {
 }
 
 struct LettuceView: View {
-    
     var body: some View {
-        
         // 물결 패턴
         Path { path in
             path.move(to: CGPoint(x: 0, y: 10))
@@ -106,7 +97,6 @@ struct PattyView: View {
     }
     
     func startVibrating() {
-        
         // 진동 효과 시작
         let duration: TimeInterval = 0.1
         Timer.scheduledTimer(withTimeInterval: duration, repeats: true) { timer in

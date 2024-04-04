@@ -8,14 +8,13 @@ import UIKit
 
 
 class MenuItemCell: UITableViewCell {
-    
-    // UI 컴포넌트 부르기
     let menuItemImageView = UIImageView()
     let nameLabel = UILabel()
     let priceLabel = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         self.selectionStyle = .none
         addSubview(menuItemImageView)
         addSubview(nameLabel)
@@ -30,7 +29,7 @@ class MenuItemCell: UITableViewCell {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("Error: ")
+        fatalError("fatalError")
     }
     
     // 셀 이미지 설정

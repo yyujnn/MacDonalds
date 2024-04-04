@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class MenuViewController: UIViewController {
-    
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     var tableView = UITableView()
     
@@ -20,17 +19,20 @@ class MenuViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = UIColor(named: "BackgroundColor")
-        
-        segmentedControl.selectedSegmentIndex = 1
         configureTableView()
-        
-        // 세그먼트 설정
+        configureSegmentedControl()
+    }
+    
+    // 세그먼트 설정
+    func configureSegmentedControl() {
+        segmentedControl.selectedSegmentIndex = 1
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             segmentedControl.heightAnchor.constraint(equalToConstant: 40) // 세그먼트 높이
         ])
-        
+        segmentedControl.backgroundColor = .systemYellow
         segmentedControl.removeAllSegments() // 기존 세그먼트 지우기!
         segmentedControl.insertSegment(withTitle: "버거", at: 0, animated: false)
         segmentedControl.insertSegment(withTitle: "사이드", at: 1, animated: false)
@@ -42,11 +44,9 @@ class MenuViewController: UIViewController {
     // 장바구니 버튼 이동 로직
     @IBAction func cartButtonTapped(_ sender: Any) {
         let storyboard = UIStoryboard(name: "CartViewController", bundle: nil)
-        
-        if let cartViewController = storyboard.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController {
-            cartViewController.modalPresentationStyle = .pageSheet
-            present(cartViewController, animated: true, completion: nil)
-        }
+        guard let cartViewController = storyboard.instantiateViewController(withIdentifier: "CartViewController") as? CartViewController else { return }
+        cartViewController.modalPresentationStyle = .pageSheet
+        present(cartViewController, animated: true)
     }
     
     // 테이블뷰 레이아웃
@@ -79,70 +79,47 @@ class MenuViewController: UIViewController {
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         switch segmentedControl.selectedSegmentIndex {
-            case 0:
-                return burgerItems.count
-            case 1:
-                return sideItems.count
-            case 2:
-                return saladItems.count
-            case 3:
-                return drinkItems.count
-            default:
-                return 0
+            case 0: return burgerItems.count
+            case 1: return sideItems.count
+            case 2: return saladItems.count
+            case 3: return drinkItems.count
+            default: return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "MenuItemCell", for: indexPath) as? MenuItemCell else { return UITableViewCell() }
-        
         let menuItem: MenuItem
+        let index = indexPath.row
         switch segmentedControl.selectedSegmentIndex {
-            case 0:
-                menuItem = burgerItems[indexPath.row]
-            case 1:
-                menuItem = sideItems[indexPath.row]
-            case 2:
-                menuItem = saladItems[indexPath.row]
-            case 3:
-                menuItem = drinkItems[indexPath.row]
-            default:
-                fatalError("Unexpected Segment")
+            case 0: menuItem = burgerItems[index]
+            case 1: menuItem = sideItems[index]
+            case 2: menuItem = saladItems[index]
+            case 3: menuItem = drinkItems[index]
+            default: fatalError("Unexpected Segment")
         }
+        
         cell.setMenuItem(menuItem: menuItem)
         cell.backgroundColor = .clear
-        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let menuItem: MenuItem
+        let index = indexPath.row
         switch segmentedControl.selectedSegmentIndex {
-            case 0:
-                menuItem = burgerItems[indexPath.row]
-            case 1:
-                menuItem = sideItems[indexPath.row]
-            case 2:
-                menuItem = saladItems[indexPath.row]
-            case 3:
-                menuItem = drinkItems[indexPath.row]
-            default:
-                fatalError("Invalid segment index.")
+            case 0: menuItem = burgerItems[index]
+            case 1: menuItem = sideItems[index]
+            case 2: menuItem = saladItems[index]
+            case 3: menuItem = drinkItems[index]
+            default: fatalError("Invalid segment index.")
         }
         
-        // DetailViewController로 보내기!!
-        let storyboard = UIStoryboard(name: "Detail", bundle: nil) // "YourStoryboardName"을 해당 스토리보드의 이름으로 교체하세요.
-        if let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController {
-            detailViewController.menu = menuItem
-            
-            // 네비게이션 컨트롤러로 전환시키는 코드
-            navigationController?.pushViewController(detailViewController, animated: true)
-        }
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        guard let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController else { return }
+        detailViewController.menu = menuItem
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
-
