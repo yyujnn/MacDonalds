@@ -15,7 +15,8 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var descriptionLabel: UILabel!
     
     // MenuVC로부터 받아올 Menu 정보
-    var menu: Menu?
+    // var menu: Menu?
+    var menu:Menu? = DataStorage.testMenu
     
     // 메인메뉴 주문 갯수
     var count: Int = 1

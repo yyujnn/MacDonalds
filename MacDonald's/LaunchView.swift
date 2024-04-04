@@ -42,12 +42,6 @@ struct LaunchView: View {
                 }
             }
         }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                    // "advanceToNextScreen" 알림 전송
-                    NotificationCenter.default.post(name: NSNotification.Name("AdvanceToNextScreen"), object: nil)
-                }
-        }
     }
 }
 
