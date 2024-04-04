@@ -54,6 +54,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
     // stepper 클릭시, 총 금액 업데이트
     @objc func stepperClicked(_ sender: UIStepper) {
         count = Int(sender.value)
+        print(count)
         self.detailTableView.reloadData()
     }
     
