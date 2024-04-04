@@ -80,10 +80,9 @@
 		685442352BBF0D3500696445 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2AC1E8DF2BBD81D7007CBE06 /* MenuViewController.swift */,
 				2A651D892BBCE149001D72B6 /* LaunchView.swift */,
+				2AC1E8DF2BBD81D7007CBE06 /* MenuViewController.swift */,
 				685441BB2BBBF04500696445 /* DetailViewController.swift */,
-				F3D14DF62BBAD9C500A5F847 /* CategoryCollectionViewCell.swift */,
 				F3D14DF82BBBA90900A5F847 /* CartViewController.swift */,
 			);
 			path = Controller;
@@ -112,6 +111,7 @@
 		685442382BBF0D6C00696445 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				F3D14DF62BBAD9C500A5F847 /* CategoryCollectionViewCell.swift */,
 				2AC1E8E12BBD8252007CBE06 /* MenuItemCell.swift */,
 				F3D14DFC2BBBAB4F00A5F847 /* CartTableViewCell.swift */,
 				F3D14DF42BBAD90B00A5F847 /* CategoryCollectionViewCell.xib */,

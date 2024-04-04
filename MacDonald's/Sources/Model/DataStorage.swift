@@ -7,11 +7,11 @@
 
 import Foundation
 
-// 싱글톤!
+
 class DataStorage {
     static let shared = DataStorage() // 접근자
 
-    private init() {} // private 외부 생성 못하게
+    private init() {} // private 외부 생성 못하게 하기
 
-    var orderArray: [OrderMenu] = [] // 장바구니목록 외부 수정 못함
+    var orderArray: [OrderMenu] = [] // 장바구니 목록 담는 배열
 }
