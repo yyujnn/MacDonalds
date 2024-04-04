@@ -12,11 +12,10 @@
 		2AB9DC802BBBDBA5003B3FA3 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DC7B2BBBDBA5003B3FA3 /* Menu.swift */; };
 		2AB9DC812BBBDBA5003B3FA3 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DC7C2BBBDBA5003B3FA3 /* MenuItem.swift */; };
 		2AB9DC822BBBDBA5003B3FA3 /* Option.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB9DC7D2BBBDBA5003B3FA3 /* Option.swift */; };
-		685441BA2BBBEF2C00696445 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685441B82BBBEF2C00696445 /* Detail.storyboard */; };
 		2AC1E8DE2BBD818B007CBE06 /* MenuVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2AC1E8DD2BBD818B007CBE06 /* MenuVC.storyboard */; };
 		2AC1E8E02BBD81D7007CBE06 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1E8DF2BBD81D7007CBE06 /* MenuViewController.swift */; };
 		2AC1E8E22BBD8252007CBE06 /* MenuItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC1E8E12BBD8252007CBE06 /* MenuItemCell.swift */; };
-		685441BA2BBBEF2C00696445 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685441B82BBBEF2C00696445 /* DetailViewController.storyboard */; };
+		685441BA2BBBEF2C00696445 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 685441B82BBBEF2C00696445 /* Detail.storyboard */; };
 		685441BC2BBBF04500696445 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685441BB2BBBF04500696445 /* DetailViewController.swift */; };
 		685442102BBD95D100696445 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6854420F2BBD95D100696445 /* DataStorage.swift */; };
 		F3D14DDF2BBAC45E00A5F847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D14DDE2BBAC45E00A5F847 /* AppDelegate.swift */; };
@@ -39,11 +38,10 @@
 		2AB9DC7B2BBBDBA5003B3FA3 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		2AB9DC7C2BBBDBA5003B3FA3 /* MenuItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		2AB9DC7D2BBBDBA5003B3FA3 /* Option.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Option.swift; sourceTree = "<group>"; };
-		685441B82BBBEF2C00696445 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		2AC1E8DD2BBD818B007CBE06 /* MenuVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuVC.storyboard; sourceTree = "<group>"; };
 		2AC1E8DF2BBD81D7007CBE06 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		2AC1E8E12BBD8252007CBE06 /* MenuItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuItemCell.swift; sourceTree = "<group>"; };
-		685441B82BBBEF2C00696445 /* DetailViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
+		685441B82BBBEF2C00696445 /* Detail.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		685441BB2BBBF04500696445 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		6854420F2BBD95D100696445 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		F3D14DDB2BBAC45E00A5F847 /* MacDonald's.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacDonald's.app"; sourceTree = BUILT_PRODUCTS_DIR; };

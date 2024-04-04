@@ -12,20 +12,26 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
     
+    // 지정한 storyboardName 이름을 갖는 Storyboard로 이동
+    func move(to storyboardName: String) {
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let initialViewController = storyboard.instantiateInitialViewController()
+        window?.rootViewController = initialViewController
+        window?.makeKeyAndVisible()
+    }
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        
-        // SwiftUI 뷰를 초기 화면으로 설정
+        // Custom LaunchScreen을 3초간 보여준 후
         let contentView = LaunchView()
         let window = UIWindow(windowScene: windowScene)
         window.rootViewController = UIHostingController(rootView: contentView)
         self.window = window
         window.makeKeyAndVisible()
-        
-        // 화면 전환 감지
-        NotificationCenter.default.addObserver(forName: NSNotification.Name("AdvanceToNextScreen"), object: nil, queue: .main) { [weak self] _ in
-            self?.advanceToMenuViewController()
+        // 내가 원하는 Storybaord를 시작점으로 설정
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+            // MARK: ⚠️ 함수 인자(to:)만 수정하세요! ⚠️
+            self.move(to: "Detail")
         }
     }
     
@@ -55,15 +61,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-    }
-    
-    func advanceToMenuViewController() {
-        let storyboard = UIStoryboard(name: "MenuVC", bundle: nil)
-        if let menuViewController = storyboard.instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController {
-                let navigationController = UINavigationController(rootViewController: menuViewController)
-                window?.rootViewController = navigationController
-                window?.makeKeyAndVisible()
-            }
     }
 }
 
