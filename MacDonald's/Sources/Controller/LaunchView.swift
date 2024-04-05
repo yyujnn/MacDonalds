@@ -17,7 +17,6 @@ struct LaunchView: View {
     
     var body: some View {
         ZStack {
-            // Color.orange.opacity(0.3).edgesIgnoringSafeArea(.all)
             Color("LaunchBackgrounColor").edgesIgnoringSafeArea(.all)
             
 
