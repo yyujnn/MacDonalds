@@ -28,7 +28,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         viewConfigure()
         configureNavigationBar()
     }
-    
+        
     func configureNavigationBar() {
         // 장바구니로 가기 버튼 생성
         let goToButton = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: #selector(cartButtonTapped))
@@ -45,6 +45,11 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         if let menu = menu {
             menuImageView.image = UIImage(named: menu.image) ?? UIImage(systemName: "carrot.fill")!
             descriptionLabel.text = menu.description
+            let attrString = NSMutableAttributedString(string: menu.description ?? "")
+            let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = 8
+                attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value: paragraphStyle, range: NSMakeRange(0, attrString.length))
+                descriptionLabel.attributedText = attrString
         } else {
             descriptionLabel.text = "잠시후 다시 시도해주세요."
         }
@@ -64,7 +69,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         self.addToCartButton.backgroundColor = .systemOrange
         self.totalAmountLabel.backgroundColor = .lightGray
     }
-    
+
     // 테이블뷰와 관련된 초기 설정
     func tableViewConfigure() {
         self.detailTableView.dataSource = self
@@ -111,7 +116,7 @@ class DetailViewController: UIViewController, UITableViewDataSource, UITableView
         cell.menuPriceLabel.text = "₩\(menu.price.formattedWithSeparator)"
         cell.countLabel.text = "\(count)"
         let totalAmount = (menu.price) * count
-        totalAmountLabel.text = "총 금액: \(totalAmount.formattedWithSeparator)원"
+        totalAmountLabel.text = "₩ \(totalAmount.formattedWithSeparator)"
         cell.menuPriceLabel.textColor = .systemOrange
         cell.menuPriceLabel.font = .systemFont(ofSize: 15, weight: .bold)
         
