@@ -63,8 +63,8 @@
                                                     <rect key="frame" x="15" y="15" width="210.66666666666666" height="47"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="불고기 버거 세트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1q-T4-z2l">
-                                                            <rect key="frame" x="0.0" y="0.0" width="111" height="19.666666666666668"/>
-                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="112.66666666666667" height="19.666666666666668"/>
+                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -164,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-245.03816793893128" y="-176.05633802816902"/>
+            <point key="canvasLocation" x="-367" y="-176"/>
         </scene>
     </scenes>
     <resources>
