@@ -42,6 +42,7 @@ let cokeZero = MenuItem(name: "제로 콜라", price: 2000, image: "cokeZero",ca
 let sprite = MenuItem(name: "스프라이트", price: 2000, image: "sprite",calories: 160, type: .drink)
 let mountainDew = MenuItem(name: "마운틴듀", price: 2000, image: "mountainDew",calories: 168, type: .drink)
 let fanta = MenuItem(name: "환타", price: 2000, image: "fanta",calories: 142, type: .drink)
+let drPepper = MenuItem(name: "닥터 페퍼", price: 2000, image: "drPepper",calories: 148 ,type: .drink)
 
 
 // 샐러드 매뉴
