@@ -12,8 +12,8 @@
 <br>
 
 
-☑️ **기능**
-- 메인 화면 -> 메뉴 화면
+#### ☑️ 구현 기능
+- 메뉴 화면
 - 상단 메뉴 카테고리 바
 - 주문 내역 확인
 - 상세 화면 확인
@@ -47,24 +47,24 @@
 <br><br><br>
 
 ## 🧵 주요 기능 & 구현 화면
-#### 1) 메인 page
+### 1) 메인 page
 - 상단 메뉴 카테고리 바
 - 특정 메뉴 카테고리 선택 시, 메뉴 카테고리에 해당하는 메뉴들을 표시
 <img width="700" alt="image" src="https://github.com/yyujnn/MacDonalds/assets/129912074/de88717e-55fd-4e27-aaa5-d4801a6ef3bd">
 
-#### 2) 메뉴 상세 page
+### 2) 메뉴 상세 page
 - 메뉴 정보 확인
 - 메뉴 수량 조절
 - 장바구니에 추가
 <img width="700" alt="image" src="https://github.com/yyujnn/MacDonalds/assets/129912074/0dd3b9fb-b0c6-4e20-bf85-6acc2672b268">
 
-#### 3) 장바구니 page
+### 3) 장바구니 page
 - 주문 내역 확인
 - 메뉴 수량 변경과 삭제
 - 결제 버튼
 <img width="700" alt="image" src="https://github.com/yyujnn/MacDonalds/assets/129912074/b2fb7a60-faf0-4d2a-864e-2e50434470a0">
 
-#### 4) Git 협업
+### 4) Git 협업
 - git add / commit / push 활용
 - git 브랜치/ PR / merge 활용
 - github pull request에서 Code review 활용
